@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Innovation Hub - Let's Grow Together Africa</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      padding-top: 80px;
+      color: #333;
+    }
+    
+    /* LEGTA Brand Colors */
+    .lgta-green { color: #144704; }
+    .lgta-gold { color: #ce7815; }
+    .lgta-bg-green { background-color: #144704; }
+    .lgta-bg-gold { background-color: #ce7815; }
+    
+    .btn-lgta {
+      background-color: #144704;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-lgta:hover {
+      background-color: #0a2e02;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(20, 71, 4, 0.3);
+    }
+    
+    .btn-outline-lgta {
+      border: 2px solid #144704;
+      color: #144704;
+      background: transparent;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-lgta:hover {
+      background-color: #144704;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Pre-Nav */
+    .pre-nav {
+      background: linear-gradient(to right, #144704, #2a7a1a);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+    }
+    .pre-nav .social-icons a {
+      margin-right: 15px;
+      font-size: 1.2rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .pre-nav .social-icons a:hover {
+      color: #ce7815;
+      transform: translateY(-3px);
+    }
+    .pre-nav .btn {
+      background-color: #ce7815;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    .pre-nav .btn:hover {
+      background-color: #b5650c;
+      transform: translateY(-2px);
+    }
+    
+    /* Navbar */
+    nav.navbar {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      right: 0;
+      z-index: 1020;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: white !important;
+    }
+    .navbar-brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    .nav-link {
+      color: #144704 !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 0 5px;
+    }
+    .nav-link:hover {
+      color: #ce7815 !important;
+      transform: translateY(-2px);
+    }
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .dropdown-item {
+      color: #144704;
+      transition: all 0.3s ease;
+    }
+    .dropdown-item:hover {
+      background: #144704;
+      color: white;
+      padding-left: 25px;
+    }
+    
+    /* Hero Section */
+    .hero-innovation {
+      background: linear-gradient(135deg, #0a3b0a, #1e5e1e);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-innovation::before {
+      content: "💡";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      bottom: -50px;
+      left: -30px;
+      transform: rotate(-15deg);
+    }
+    .hero-innovation::after {
+      content: "⚡";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      top: -50px;
+      right: -30px;
+      transform: rotate(15deg);
+    }
+    .hero-innovation h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+    .hero-innovation p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Section Title */
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #144704;
+      margin-bottom: 50px;
+      position: relative;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+    .section-title:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: #ce7815;
+      border-radius: 5px;
+    }
+    
+    /* Cards */
+    .innovation-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      height: 100%;
+      border: none;
+      position: relative;
+    }
+    .innovation-card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 25px 50px rgba(20, 71, 4, 0.2);
+    }
+    .innovation-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 5px solid #ce7815;
+    }
+    .innovation-card-body {
+      padding: 30px;
+    }
+    .innovation-icon {
+      font-size: 2.5rem;
+      color: #ce7815;
+      margin-bottom: 20px;
+    }
+    .innovation-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ce7815;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    
+    /* Bootcamp Cards */
+    .bootcamp-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      height: 100%;
+      transition: all 0.3s ease;
+      border-left: 5px solid #ce7815;
+    }
+    .bootcamp-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 15px 35px rgba(20, 71, 4, 0.15);
+    }
+    .bootcamp-icon {
+      font-size: 2rem;
+      color: #144704;
+      margin-bottom: 15px;
+    }
+    
+    /* Stats */
+    .stat-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .stat-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(20, 71, 4, 0.1);
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #144704;
+    }
+    .stat-label {
+      font-size: 1.1rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #144704;
+      color: white;
+      padding: 50px 0 20px;
+      margin-top: 50px;
+    }
+    .footer-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .footer-nav a {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .footer-nav a:hover {
+      color: #ce7815;
+      padding-left: 8px;
+    }
+    
+    /* WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+    
+    /* Chatbot */
+    #chatbot-container {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      z-index: 1000;
+    }
+    #chatbot-window {
+      display: none;
+      width: 320px;
+      height: 450px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+      border: 2px solid #144704;
+      overflow: hidden;
+    }
+    #chatbot-toggle {
+      background: #144704;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(20,71,4,0.4);
+      transition: all 0.3s ease;
+    }
+    #chatbot-toggle:hover {
+      background: #ce7815;
+      transform: scale(1.1) rotate(10deg);
+    }
+    
+    /* Timeline */
+    .timeline-item {
+      display: flex;
+      margin-bottom: 25px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .timeline-number {
+      width: 50px;
+      height: 50px;
+      background: #144704;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pre-Nav -->
+  <div class="pre-nav">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="donate.html" class="btn btn-sm">Support Our Mission</a>
+      <div class="social-icons d-flex">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="rounded-circle me-2">
+        <span style="color: #144704; font-weight: 700;"> Let's Grow Together Africa</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
+              <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
+              <li><a class="dropdown-item" href="teams.html">Our Team</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Programs</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="youth-empowerment.html">Youth Empowerment</a></li>
+              <li><a class="dropdown-item" href="environmental-projects.html">Environmental Projects</a></li>
+              <li><a class="dropdown-item" href="innovation-hub.html">Innovation Hub</a></li>
+              <li><a class="dropdown-item" href="joint-investments.html">Joint Investments</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Get Involved</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="volunteer.html">Volunteer</a></li>
+              <li><a class="dropdown-item" href="partner.html">Partner With Us</a></li>
+              <li><a class="dropdown-item" href="mentor.html">Become a Mentor</a></li>
+              <li><a class="dropdown-item" href="join-movement.html">Join the Movement</a></li>
+              <li><a class="dropdown-item" href="donate.html">Support Our Work</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-innovation">
+    <div class="container">
+      <h1>INNOVATION HUB</h1>
+      <p class="lead">Where ideas become solutions</p>
+      <p class="fs-5 mt-4">Empowering young innovators to solve Africa's challenges through creativity, technology, and entrepreneurship</p>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+          <h2 class="section-title text-start" style="text-align: left !important;">Fueling Africa's Innovation Economy</h2>
+          <p class="fs-5 mb-4">We believe that young Africans possess the creativity and ingenuity to solve the continent's most pressing challenges. The Innovation Hub provides the platform, resources, and mentorship to transform ideas into sustainable ventures.</p>
+          <div class="d-flex mb-3">
+            <i class="bi bi-lightbulb-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Innovation Bootcamps</h5>
+              <p>Intensive training in design thinking, prototyping, and problem-solving</p>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <i class="bi bi-tools lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Prototyping Labs</h5>
+              <p>Physical and digital spaces to build and test innovative solutions</p>
+            </div>
+          </div>
+          <div class="d-flex mb-4">
+            <i class="bi bi-award lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Innovation Challenges</h5>
+              <p>Competitions that reward creative solutions to real community problems</p>
+            </div>
+          </div>
+          <a href="join-movement.html" class="btn btn-lgta btn-lg">Join the Innovation Hub</a>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <img src="assets/12.png" alt="Innovation Hub" class="img-fluid rounded-4 shadow-lg" style="width: 100%; height: 450px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Innovators</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">75+</div>
+            <div class="stat-label">Startups</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Innovation Labs</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">$250K</div>
+            <div class="stat-label">Seed Funding</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation Bootcamps -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Innovation & Creativity Bootcamps</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="bootcamp-card">
+            <div class="bootcamp-icon">
+              <i class="bi bi-1-circle-fill"></i>
+            </div>
+            <h4 class="fw-bold lgta-green">Design Thinking Bootcamp</h4>
+            <p class="text-muted">A 5-day intensive program teaching human-centered design, problem identification, ideation, prototyping, and testing. Participants work on real community challenges.</p>
+            <div class="mt-3">
+              <span class="badge bg-success me-2">Next: April 2025</span>
+              <span class="badge bg-warning text-dark">5 Days</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="bootcamp-card">
+            <div class="bootcamp-icon">
+              <i class="bi bi-2-circle-fill"></i>
+            </div>
+            <h4 class="fw-bold lgta-green">Tech Innovation Bootcamp</h4>
+            <p class="text-muted">Focused on digital solutions, app development, and tech-based entrepreneurship. Learn coding, UI/UX, and how to launch digital products.</p>
+            <div class="mt-3">
+              <span class="badge bg-success me-2">Next: May 2025</span>
+              <span class="badge bg-warning text-dark">7 Days</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="bootcamp-card">
+            <div class="bootcamp-icon">
+              <i class="bi bi-3-circle-fill"></i>
+            </div>
+            <h4 class="fw-bold lgta-green">Social Innovation Bootcamp</h4>
+            <p class="text-muted">Creating solutions for social and environmental challenges. Focus on sustainable business models and measuring social impact.</p>
+            <div class="mt-3">
+              <span class="badge bg-success me-2">Next: June 2025</span>
+              <span class="badge bg-warning text-dark">5 Days</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="bootcamp-card">
+            <div class="bootcamp-icon">
+              <i class="bi bi-4-circle-fill"></i>
+            </div>
+            <h4 class="fw-bold lgta-green">Green Innovation Bootcamp</h4>
+            <p class="text-muted">Specialized training for eco-innovators developing solutions in renewable energy, waste management, sustainable agriculture, and conservation.</p>
+            <div class="mt-3">
+              <span class="badge bg-success me-2">Next: July 2025</span>
+              <span class="badge bg-warning text-dark">5 Days</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation Programs Grid -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Our Innovation Programs</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="innovation-card">
+            <div class="innovation-badge">Featured</div>
+            <img src="assets/poople.jpg" alt="Youth Dialogue Forums">
+            <div class="innovation-card-body">
+              <div class="innovation-icon">
+                <i class="bi bi-chat-dots"></i>
+              </div>
+              <h4 class="fw-bold lgta-green">Youth Dialogue Forums</h4>
+              <p class="text-muted">Monthly idea-generation sessions where young people collaborate to solve community challenges through innovative thinking.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Peer learning</li>
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Problem-solving</li>
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Networking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="innovation-card">
+            <img src="assets/serve.jpg" alt="Group Project Incubation">
+            <div class="innovation-card-body">
+              <div class="innovation-icon">
+                <i class="bi bi-rocket"></i>
+              </div>
+              <h4 class="fw-bold lgta-green">Group Project Incubation</h4>
+              <p class="text-muted">6-month incubation program for youth-led innovative projects. Includes mentorship, seed funding, and workspace.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Seed funding up to $5,000</li>
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Expert mentorship</li>
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Co-working space</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="innovation-card">
+            <img src="assets/pad.jpg" alt="Innovation Challenges">
+            <div class="innovation-card-body">
+              <div class="innovation-icon">
+                <i class="bi bi-trophy"></i>
+              </div>
+              <h4 class="fw-bold lgta-green">Innovation Challenges</h4>
+              <p class="text-muted">Themed competitions addressing specific challenges in agriculture, health, education, and environment. Winners receive funding and support.</p>
+              <ul class="list-unstyled mt-3">
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Cash prizes</li>
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Incubation offers</li>
+                <li><i class="bi bi-check-lg lgta-gold me-2"></i> Investor access</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovation Process -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">From Idea to Impact</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="timeline-item">
+            <div class="timeline-number">1</div>
+            <div>
+              <h5 class="fw-bold lgta-green">Ideation & Problem Identification</h5>
+              <p class="text-muted mb-0">Identify community challenges and generate innovative solutions through dialogue forums and design thinking workshops.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div>
+              <h5 class="fw-bold lgta-green">Bootcamp & Skills Training</h5>
+              <p class="text-muted mb-0">Intensive training in innovation methodologies, prototyping, business modeling, and pitching.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div>
+              <h5 class="fw-bold lgta-green">Prototyping & Testing</h5>
+              <p class="text-muted mb-0">Build minimum viable products, test with real users, and iterate based on feedback in our innovation labs.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">4</div>
+            <div>
+              <h5 class="fw-bold lgta-green">Incubation & Mentorship</h5>
+              <p class="text-muted mb-0">6-month incubation with expert mentors, business development support, and access to networks.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">5</div>
+            <div>
+              <h5 class="fw-bold lgta-green">Investment & Scaling</h5>
+              <p class="text-muted mb-0">Connect with investors, access joint investment circles, and scale your solution across communities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Innovator Success Stories</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <div class="text-center mb-3">
+              <div class="bg-success rounded-circle mx-auto" style="width: 80px; height: 80px; background: #144704 !important;"></div>
+            </div>
+            <h5 class="fw-bold text-center lgta-green">EcoPlast Uganda</h5>
+            <p class="text-muted text-center small">Recycling plastic waste into construction materials</p>
+            <p class="mt-3">"The innovation bootcamp transformed our idea into a viable business. Today we employ 15 youth and have recycled over 50 tons of plastic."</p>
+            <p class="fw-bold mb-0 text-center">— David Okello, Founder</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <div class="text-center mb-3">
+              <div class="bg-success rounded-circle mx-auto" style="width: 80px; height: 80px; background: #144704 !important;"></div>
+            </div>
+            <h5 class="fw-bold text-center lgta-green">AgriTech Kenya</h5>
+            <p class="text-muted text-center small">Mobile platform connecting farmers to markets</p>
+            <p class="mt-3">"Through LEGTA's incubation program, we secured funding and mentorship. We've now connected 5,000+ farmers to fair markets."</p>
+            <p class="fw-bold mb-0 text-center">— Grace Mwangi, CEO</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <div class="text-center mb-3">
+              <div class="bg-success rounded-circle mx-auto" style="width: 80px; height: 80px; background: #144704 !important;"></div>
+            </div>
+            <h5 class="fw-bold text-center lgta-green">SolarEd Tanzania</h5>
+            <p class="text-muted text-center small">Solar-powered digital learning for rural schools</p>
+            <p class="mt-3">"Winning the innovation challenge gave us the credibility and funding to pilot in 10 schools. Now we're scaling across East Africa."</p>
+            <p class="fw-bold mb-0 text-center">— Aisha Mohammed, Founder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="p-5 rounded-5 text-white text-center" style="background: linear-gradient(145deg, #144704, #1a5a06);">
+            <h3 class="fw-bold mb-3 fs-2">Have an Innovative Idea?</h3>
+            <p class="mb-4 fs-5">Join our innovation community and turn your idea into a sustainable venture.</p>
+            <a href="join-movement.html" class="btn btn-light btn-lg px-5 py-3 fw-bold me-3" style="color: #144704;">Apply Now</a>
+            <a href="upcoming-events.html" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">View Bootcamps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 d-flex align-items-center">
+          <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="footer-logo me-3">
+          <h4 class="fs-4 fw-bold">Let's Grow Together Africa</h4>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold lgta-gold">Quick Links</h5>
+          <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="vision.html">Our Vision</a>
+            <a href="teams.html">Our Team</a>
+            <a href="youth-empowerment.html">Youth Empowerment</a>
+            <a href="environmental-projects.html">Environmental Projects</a>
+            <a href="innovation-hub.html">Innovation Hub</a>
+            <a href="joint-investments.html">Joint Investments</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold lgta-gold">Connect With Us</h5>
+          <div class="d-flex fs-3 mb-3">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <p><i class="bi bi-envelope me-2"></i> info@letsgrowtogetherafrica.org</p>
+          <p><i class="bi bi-telephone me-2"></i> +256 758 943259</p>
+        </div>
+      </div>
+      <hr style="background: #ce7815;">
+      <p class="text-center mb-0">&copy; 2026 Let's Grow Together Africa. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/256758943259" class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Chatbot -->
+  <div id="chatbot-container">
+    <div id="chatbot-window">
+      <div style="background: #144704; color: white; padding: 15px; border-radius: 10px 10px 0 0;">
+        <h6 style="margin: 0; font-weight: 600;"><i class="bi bi-robot me-2"></i>LEGTA Assistant</h6>
+        <button id="close-chat" style="background: none; border: none; color: white; float: right; cursor: pointer;">×</button>
+      </div>
+      <div id="chat-messages">
+        <div style="background: #f0f0f0; padding: 10px; border-radius: 10px; margin-bottom: 10px;">
+          <strong>LEGTA Assistant:</strong> Hello! Welcome to the Innovation Hub. I can tell you about our bootcamps, incubation programs, and how to apply. How can I help?
+        </div>
+      </div>
+      <div style="padding: 15px; border-top: 1px solid #ddd; background: white;">
+        <div class="input-group">
+          <input type="text" id="chat-input" placeholder="Type your question..." class="form-control" style="border-radius: 30px 0 0 30px;">
+          <button id="send-chat" style="background: #144704; color: white; border: none; padding: 8px 20px; border-radius: 0 30px 30px 0; cursor: pointer;">
+            <i class="bi bi-send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button id="chatbot-toggle">
+      <i class="bi bi-chat-dots"></i>
+    </button>
+  </div>
+
+  <script>
+    // Chatbot functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatbotToggle = document.getElementById('chatbot-toggle');
+      const chatbotWindow = document.getElementById('chatbot-window');
+      const closeChat = document.getElementById('close-chat');
+      const sendButton = document.getElementById('send-chat');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+      
+      chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+      });
+      
+      closeChat.addEventListener('click', () => {
+        chatbotWindow.style.display = 'none';
+      });
+      
+      function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.style.background = isUser ? '#e3f2fd' : '#f0f0f0';
+        messageDiv.style.padding = '10px';
+        messageDiv.style.borderRadius = '10px';
+        messageDiv.style.marginBottom = '10px';
+        messageDiv.innerHTML = `<strong>${isUser ? 'You' : 'LEGTA Assistant'}:</strong> ${message}`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      sendButton.addEventListener('click', () => {
+        const question = chatInput.value.trim();
+        if (question) {
+          addMessage(question, true);
+          chatInput.value = '';
+          
+          setTimeout(() => {
+            if (question.toLowerCase().includes('bootcamp')) {
+              addMessage("We offer 4 bootcamps: Design Thinking, Tech Innovation, Social Innovation, and Green Innovation. The next bootcamp starts in April 2025. Would you like more details?");
+            } else if (question.toLowerCase().includes('apply')) {
+              addMessage("You can apply through our website at legta.org/apply or visit our office. The application process takes 10 minutes.");
+            } else if (question.toLowerCase().includes('funding')) {
+              addMessage("Our incubation program provides seed funding up to $5,000, plus mentorship and workspace. We also connect innovators to our joint investment circles.");
+            } else {
+              addMessage("The Innovation Hub offers bootcamps, incubation, prototyping labs, and innovation challenges. What specific area interests you?");
+            }
+          }, 500);
+        }
+      });
+      
+      chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          sendButton.click();
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

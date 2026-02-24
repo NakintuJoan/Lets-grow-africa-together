@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Grow Together Africa | LEGTA - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+        
+        /* LEGTA Brand Colors */
+        .lgta-green { color: #144704; }
+        .lgta-gold { color: #ce7815; }
+        .lgta-bg-green { background-color: #144704; }
+        .lgta-bg-gold { background-color: #ce7815; }
+        
+        /* Custom Buttons */
+        .btn-lgta-primary {
+            background: linear-gradient(45deg, #144704, #1e6e0a);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(20, 71, 4, 0.3);
+        }
+        .btn-lgta-primary:hover {
+            background: linear-gradient(45deg, #1e6e0a, #144704);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(20, 71, 4, 0.5);
+        }
+        
+        .btn-lgta-secondary {
+            background: linear-gradient(45deg, #ce7815, #e08e2e);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(206, 120, 21, 0.3);
+        }
+        .btn-lgta-secondary:hover {
+            background: linear-gradient(45deg, #e08e2e, #ce7815);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(206, 120, 21, 0.5);
+        }
+        
+        .btn-outline-lgta {
+            border: 2px solid #144704;
+            color: #144704;
+            background: transparent;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-lgta:hover {
+            background-color: #144704;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(20, 71, 4, 0.3);
+        }
+        
+        /* Pre-Nav Styling */
+        .pre-nav {
+            background: linear-gradient(to right, #144704, #1e6e0a);
+            padding: 12px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .pre-nav .social-icons a {
+            margin-right: 18px;
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .pre-nav .social-icons a:hover {
+            color: #ce7815;
+            transform: translateY(-3px);
+        }
+        
+        .pre-nav .btn {
+            background-color: #ce7815;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 8px 25px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .pre-nav .btn:hover {
+            background-color: #b5650c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        body {
+            padding-top: 90px;
+        }
+        
+        /* ========== UPDATED NAVBAR STYLES ========== */
+        /* Navbar with transparent green background */
+        nav.navbar {
+            position: fixed;
+            top: 52px;
+            left: 0;
+            right: 0;
+            z-index: 1020;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            background: rgba(20, 71, 4, 0.85) !important; /* Transparent green - 85% opacity */
+            backdrop-filter: blur(12px);
+            padding: 12px 0;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid rgba(206, 120, 21, 0.3);
+        }
+        
+        /* Navbar on scroll - slightly more solid */
+        nav.navbar.scrolled {
+            background: rgba(20, 71, 4, 0.95) !important;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: white !important;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .navbar-brand img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border: 2px solid #ce7815;
+            padding: 2px;
+            background: white;
+        }
+        
+        .navbar-brand span {
+            color: white !important;
+        }
+        
+        .navbar-brand span span {
+            color: #ce7815 !important;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 8px;
+            position: relative;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #ce7815;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .nav-link:hover:after {
+            width: 80%;
+        }
+        
+        .nav-link:hover {
+            color: #ce7815 !important;
+        }
+        
+        .nav-link.active {
+            color: #ce7815 !important;
+            font-weight: 600;
+        }
+        
+        .nav-link.active:after {
+            width: 80%;
+            background: #ce7815;
+        }
+        
+        .navbar-toggler {
+            background-color: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* ========== HOVER-ACTIVATED DROPDOWNS ========== */
+        /* Dropdown menu styling */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 12px;
+            margin-top: 12px !important;
+            background: white;
+            min-width: 220px;
+            border-top: 4px solid #ce7815;
+            display: block !important;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: translateY(10px);
+        }
+        
+        /* Show dropdown on hover */
+        .nav-item.dropdown:hover .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Ensure dropdown stays visible when hovering over menu */
+        .nav-item.dropdown .dropdown-menu:hover {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .dropdown-item {
+            color: #144704;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            padding: 10px 18px;
+            font-weight: 500;
+        }
+        
+        .dropdown-item i {
+            color: #ce7815;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-item:hover {
+            background: #144704;
+            color: white;
+            padding-left: 25px;
+        }
+        
+        .dropdown-item:hover i {
+            color: white;
+        }
+        
+        .dropdown-divider {
+            margin: 8px 0;
+            border-top: 1px solid rgba(20, 71, 4, 0.1);
+        }
+        
+        /* Remove caret icon color */
+        .dropdown-toggle::after {
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-toggle:hover::after {
+            color: #ce7815;
+        }
+        
+        /* Responsive adjustments for mobile */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: rgba(20, 71, 4, 0.98);
+                padding: 20px;
+                border-radius: 15px;
+                margin-top: 15px;
+                backdrop-filter: blur(12px);
+            }
+            
+            .dropdown-menu {
+                background: rgba(255,255,255,0.95);
+                margin-top: 5px !important;
+                visibility: visible;
+                opacity: 1;
+                transform: none;
+                display: none;
+            }
+            
+            .dropdown-menu.show {
+                display: block;
+            }
+            
+            .nav-item.dropdown:hover .dropdown-menu {
+                visibility: visible;
+                opacity: 1;
+                display: block;
+            }
+        }
+        /* ========== END NAVBAR UPDATES ========== */
+        
+        /* Hero Section Styling */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section .carousel-item {
+            position: relative;
+        }
+        
+        .hero-section .carousel-item img {
+            height: 600px;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(20,71,4,0.8), rgba(0,0,0,0.5));
+            z-index: 1;
+        }
+        
+        .hero-section .carousel-caption {
+            z-index: 2;
+            bottom: 50%;
+            transform: translateY(50%);
+            text-align: center;
+        }
+        
+        .hero-section .carousel-caption h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-section .carousel-caption p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        .hero-section .carousel-caption .btn {
+            margin-top: 10px;
+            margin-right: 15px;
+            padding: 14px 35px;
+            font-size: 1.1rem;
+            animation: fadeInUp 1.4s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .carousel-control-prev, .carousel-control-next {
+            z-index: 3;
+            width: 5%;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #144704;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: #ce7815;
+            border-radius: 5px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        
+        /* Founder Message Card */
+        .founder-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            border: none;
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(20, 71, 4, 0.2);
+        }
+        
+        .founder-card img {
+            transition: all 0.5s ease;
+        }
+        
+        .founder-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Program Cards */
+        .program-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: none;
+            position: relative;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 25px 50px rgba(20, 71, 4, 0.2);
+        }
+        
+        .program-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .program-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .program-card-body {
+            padding: 25px;
+            background: white;
+        }
+        
+        .program-card .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .program-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ce7815;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        /* Event Cards */
+        .event-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: none;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(20, 71, 4, 0.15);
+        }
+        
+        .event-card img {
+            height: 220px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .event-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .event-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #144704;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.2;
+            z-index: 2;
+        }
+        
+        .event-date span {
+            font-size: 1.5rem;
+            display: block;
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: none;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(20, 71, 4, 0.1);
+        }
+        
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ce7815;
+            margin-right: 20px;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-quote:before {
+            content: '"';
+            font-size: 4rem;
+            color: #ce7815;
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+        }
+        
+        /* Stats Counter */
+        .stats-section {
+            background: linear-gradient(135deg, #144704, #1e6e0a);
+            color: white;
+            padding: 60px 0;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section:before {
+            content: "🌍";
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            bottom: -50px;
+            right: -30px;
+            transform: rotate(15deg);
+        }
+        
+        .stats-section:after {
+            content: "🚀";
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: -50px;
+            left: -30px;
+            transform: rotate(-15deg);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Partners Section */
+        .partner-logo {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+        }
+        
+        .partner-logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(20, 71, 4, 0.1);
+        }
+        
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(145deg, #144704, #1e6e0a);
+            border-radius: 30px;
+            padding: 60px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: "🤝";
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            bottom: -30px;
+            right: -20px;
+            transform: rotate(15deg);
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section .btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0a2e02;
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 70px;
+            position: relative;
+        }
+        
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ce7815;
+        }
+        
+        .footer-nav a {
+            display: block;
+            margin-bottom: 12px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-nav a:hover {
+            color: #ce7815;
+            transform: translateX(8px);
+        }
+        
+        .footer-social a {
+            color: white;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .footer-social a:hover {
+            color: #ce7815;
+            transform: translateY(-5px);
+        }
+        
+        .newsletter-input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 12px 20px;
+            color: white;
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .newsletter-input:focus {
+            background: rgba(255,255,255,0.2);
+            border-color: #ce7815;
+            box-shadow: none;
+            color: white;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+            color: white;
+        }
+        
+        /* Chatbot */
+        #chatbot-container {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        #chatbot-window {
+            display: none;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
+            border: 3px solid #144704;
+            overflow: hidden;
+        }
+        
+        #chatbot-header {
+            background: linear-gradient(45deg, #144704, #1e6e0a);
+            color: white;
+            padding: 18px;
+        }
+        
+        #chatbot-header h6 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        #chatbot-toggle {
+            background: linear-gradient(45deg, #144704, #1e6e0a);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            font-size: 28px;
+            box-shadow: 0 8px 25px rgba(20, 71, 4, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        #chatbot-toggle:hover {
+            background: linear-gradient(45deg, #1e6e0a, #144704);
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 12px 35px rgba(20, 71, 4, 0.6);
+        }
+        
+        #chat-messages {
+            height: 370px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-section .carousel-caption h1 {
+                font-size: 2.8rem;
+            }
+            .hero-section .carousel-caption p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 90px;
+            }
+            
+            .hero-section .carousel-item img {
+                height: 500px;
+            }
+            .hero-section .carousel-caption h1 {
+                font-size: 2.2rem;
+            }
+            .hero-section .carousel-caption p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 110px;
+            }
+            .hero-section .carousel-item img {
+                height: 400px;
+            }
+            .hero-section .carousel-caption h1 {
+                font-size: 1.8rem;
+            }
+            .hero-section .carousel-caption .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Pre-Nav Section -->
+    <div class="pre-nav">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <a href="donate.html" class="btn">❤️ Support Our Mission</a>
+            </div>
+            <div class="social-icons d-flex align-items-center">
+                <a href="#" class="mx-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="mx-2"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=uhod2q7" class="mx-2"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="mx-2"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="mx-2"><i class="bi bi-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar - Updated with Transparent Green and Hover Dropdowns -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="rounded-circle me-2">
+                <span>Let's Grow Together <span style="color: #ce7815;">Africa</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="mission.html"><i class="bi bi-bullseye me-2"></i>Our Mission</a></li>
+                            <li><a class="dropdown-item" href="vision.html"><i class="bi bi-eye me-2"></i>Our Vision</a></li>
+                            <li><a class="dropdown-item" href="teams.html"><i class="bi bi-people me-2"></i>Our Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+                            <li><a class="dropdown-item" href="youth-empowerment.html"><i class="bi bi-rocket me-2"></i>Youth Empowerment</a></li>
+                            <li><a class="dropdown-item" href="environmental-projects.html"><i class="bi bi-tree me-2"></i>Environmental Projects</a></li>
+                            <li><a class="dropdown-item" href="innovation-hub.html"><i class="bi bi-lightbulb me-2"></i>Innovation Hub</a></li>
+                            <li><a class="dropdown-item" href="joint-investments.html"><i class="bi bi-piggy-bank me-2"></i>Joint Investments</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Get Involved
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
+                            <li><a class="dropdown-item" href="volunteer.html"><i class="bi bi-hand-thumbs-up me-2"></i>Volunteer</a></li>
+                            <li><a class="dropdown-item" href="partner.html"><i class="bi bi-handshake me-2"></i>Partner With Us</a></li>
+                            <li><a class="dropdown-item" href="mentor.html"><i class="bi bi-award me-2"></i>Become a Mentor</a></li>
+                            <li><a class="dropdown-item" href="donate.html"><i class="bi bi-gift me-2"></i>Support Our Work</a></li>
+                            <li><a class="dropdown-item" href="join-program.html"><i class="bi bi-door-open me-2"></i>Join Our Programs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <header class="hero-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/c2.png" class="d-block w-100" alt="African Youth Conference">
+                    <div class="hero-overlay"></div>
+                    <div class="carousel-caption">
+                        <h1>Let's Grow Together Africa</h1>
+                        <p class="lead">Empowering Africa's Youth for Purpose, Innovation, and Collective Achievement</p>
+                        <div>
+                            <a href="join-program.html" class="btn btn-lgta-primary btn-lg">Join the Movement <i class="bi bi-arrow-right ms-2"></i></a>
+                            <a href="donate.html" class="btn btn-lgta-secondary btn-lg">Support Our Mission <i class="bi bi-heart ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/11.png" class="d-block w-100" alt="Youth Innovation Hub">
+                    <div class="hero-overlay"></div>
+                    <div class="carousel-caption">
+                        <h1>Innovate. Create. Scale.</h1>
+                        <p class="lead">Join Africa's largest youth-led innovation ecosystem</p>
+                        <div>
+                            <a href="innovation-hub.html" class="btn btn-lgta-primary btn-lg">Explore Innovation Hub <i class="bi bi-lightbulb ms-2"></i></a>
+                            <a href="volunteer.html" class="btn btn-lgta-secondary btn-lg">Become a Volunteer <i class="bi bi-people ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/12.png" class="d-block w-100" alt="Environmental Conservation">
+                    <div class="hero-overlay"></div>
+                    <div class="carousel-caption">
+                        <h1>Green Africa, Bright Future</h1>
+                        <p class="lead">Youth-led environmental action for sustainable development</p>
+                        <div>
+                            <a href="environmental-projects.html" class="btn btn-lgta-primary btn-lg">Join Green Campaign <i class="bi bi-tree ms-2"></i></a>
+                            <a href="joint-investments.html" class="btn btn-lgta-secondary btn-lg">Invest Together <i class="bi bi-piggy-bank ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item" data-aos="fade-up">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">African Countries</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Youth Empowered</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number">50,000+</div>
+                        <div class="stat-label">Trees Planted</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number">75+</div>
+                        <div class="stat-label">Youth Startups</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message from the Founder -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="founder-card" data-aos="fade-up">
+                        <div class="row g-0">
+                            <div class="col-lg-5">
+                                <img src="assets/hhh.jpeg" class="img-fluid h-100 w-100" alt="Founder LEGTA" style="object-fit: cover; min-height: 400px;">
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="card-body p-5">
+                                    <div class="mb-4">
+                                        <span class="badge bg-warning text-dark px-4 py-2 rounded-pill" style="background: #ce7815 !important; color: white !important;">Message from the Founder</span>
+                                    </div>
+                                    <h2 class="lgta-green fw-bold mb-4" style="font-size: 2.2rem;">A Word from Our Founder</h2>
+                                    <p class="fs-5 mb-4" style="color: #555; font-style: italic;">
+                                        "At Let's Grow Together Africa, we believe that the power to transform our continent lies within our youth. 
+                                        By uniting young minds, aligning purpose with action, and fostering innovation, we're creating a generation 
+                                        that doesn't wait for opportunities but creates them. Together, we're building sustainable ventures, 
+                                        protecting our environment, and driving collective growth that benefits all Africans."
+                                    </p>
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div>
+                                            <h5 class="fw-bold mb-1">MUTALINDWA BLAIR BRUNO</h5>
+                                            <p class="text-muted mb-0">Founder & Executive Director, LEGTA</p>
+                                        </div>
+                                    </div>
+                                    <a href="teams.html" class="btn btn-lgta-primary">
+                                        Meet Our Team <i class="bi bi-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Core Programs Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Core Programs</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Discover the impactful initiatives driving youth empowerment and environmental sustainability across Africa
+            </p>
+            
+            <div class="row g-4">
+                <!-- Program 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="program-card">
+                        <div class="program-badge">Flagship</div>
+                        <img src="assets/mindset-workshop.jpg" class="card-img-top" alt="Mindset Workshops">
+                        <div class="program-card-body">
+                            <h5 class="card-title lgta-primary">Mindset & Purpose Alignment</h5>
+                            <p class="card-text text-muted">Transforming limiting beliefs into empowering mindsets and guiding youth toward their life purpose and environmental consciousness.</p>
+                            <a href="youth-empowerment.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-card">
+                        <div class="program-badge">Innovation</div>
+                        <img src="assets/innovation-bootcamp.jpg" class="card-img-top" alt="Innovation Bootcamp">
+                        <div class="program-card-body">
+                            <h5 class="card-title lgta-primary">Innovation & Creativity Bootcamps</h5>
+                            <p class="card-text text-muted">Equipping young innovators with skills to solve real-life challenges through sustainable and green initiatives.</p>
+                            <a href="innovation-hub.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-card">
+                        <div class="program-badge">Enterprise</div>
+                        <img src="assets/entrepreneurship-training.jpg" class="card-img-top" alt="Entrepreneurship">
+                        <div class="program-card-body">
+                            <h5 class="card-title lgta-primary">Entrepreneurship & Job Creation</h5>
+                            <p class="card-text text-muted">Training youth to create their own enterprises and employment opportunities through sustainable business models.</p>
+                            <a href="joint-investments.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="program-card">
+                        <div class="program-badge">Green</div>
+                        <img src="assets/environmental-campaign.jpg" class="card-img-top" alt="Environmental Projects">
+                        <div class="program-card-body">
+                            <h5 class="card-title lgta-primary">Environmental Protection</h5>
+                            <p class="card-text text-muted">Leading afforestation campaigns, waste management programs, and community sensitization on sustainable practices.</p>
+                            <a href="environmental-projects.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="program-card">
+                        <div class="program-badge">Investment</div>
+                        <img src="assets/joint-investment.jpg" class="card-img-top" alt="Joint Investments">
+                        <div class="program-card-body">
+                            <h5 class="card-title lgta-primary">Joint Investment Programs</h5>
+                            <p class="card-text text-muted">Facilitating collective investment circles where youth pool resources to start and grow sustainable ventures together.</p>
+                            <a href="joint-investments.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="program-card">
+                        <div class="program-badge">Dialogue</div>
+                        <img src="assets/youth-dialogue.jpg" class="card-img-top" alt="Youth Dialogues">
+                        <div class="program-card-body">
+                            <h5 class="card-title lgta-primary">Youth Dialogue Forums</h5>
+                            <p class="card-text text-muted">Creating platforms for idea generation, collaboration, and peer-to-peer learning across African youth networks.</p>
+                            <a href="innovation-hub.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="join-program.html" class="btn btn-lgta-primary btn-lg px-5">Explore All Programs <i class="bi bi-grid ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Upcoming Events</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Join us at our upcoming events across Africa. Network, learn, and grow with fellow change-makers.
+            </p>
+            
+            <div class="row g-4">
+                <!-- Event 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card event-card">
+                        <div class="position-relative">
+                            <div class="event-date">
+                                <span>15</span>
+                                APR
+                            </div>
+                            <img src="assets/youth-summit.jpg" class="card-img-top" alt="Youth Innovation Summit">
+                        </div>
+                        <div class="event-card-body">
+                            <h5 class="lgta-primary fw-bold">Youth Innovation Summit 2025</h5>
+                            <p class="text-muted small mb-2"><i class="bi bi-geo-alt-fill lgta-gold me-2"></i> Kampala, Uganda & Virtual</p>
+                            <p class="text-muted">Join young innovators from across Africa for a 3-day summit focused on sustainable solutions, networking, and funding opportunities.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-success">50+ Spots Left</span>
+                                <a href="coming.html" class="btn btn-lgta-primary btn-sm">Register <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card event-card">
+                        <div class="position-relative">
+                            <div class="event-date">
+                                <span>22</span>
+                                MAY
+                            </div>
+                            <img src="assets/green-campaign.jpg" class="card-img-top" alt="Environmental Camp">
+                        </div>
+                        <div class="event-card-body">
+                            <h5 class="lgta-primary fw-bold">Green Africa Campaign Launch</h5>
+                            <p class="text-muted small mb-2"><i class="bi bi-geo-alt-fill lgta-gold me-2"></i> Nairobi, Kenya</p>
+                            <p class="text-muted">Be part of our continental tree-planting initiative and learn sustainable environmental practices for community development.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-warning text-dark">100+ Spots</span>
+                                <a href="coming.html" class="btn btn-lgta-primary btn-sm">Join <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card event-card">
+                        <div class="position-relative">
+                            <div class="event-date">
+                                <span>10</span>
+                                JUN
+                            </div>
+                            <img src="assets/entrepreneurship-bootcamp.jpg" class="card-img-top" alt="Entrepreneurship Workshop">
+                        </div>
+                        <div class="event-card-body">
+                            <h5 class="lgta-primary fw-bold">Entrepreneurship Bootcamp</h5>
+                            <p class="text-muted small mb-2"><i class="bi bi-geo-alt-fill lgta-gold me-2"></i> Kigali, Rwanda</p>
+                            <p class="text-muted">Intensive 5-day training program for aspiring young entrepreneurs focusing on business development, funding, and sustainable growth.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-success">30 Spots Left</span>
+                                <a href="coming.html" class="btn btn-lgta-primary btn-sm">Apply <i class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="coming.html" class="btn btn-outline-lgta btn-lg px-5">View All Events <i class="bi bi-calendar-event ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">What Our Youth Say</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Real stories from young Africans whose lives have been transformed through LEGTA programs.
+            </p>
+            
+            <div class="row g-4">
+                <!-- Testimonial 1 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="assets/sarah-entrepreneur.jpg" alt="Sarah K." class="testimonial-image">
+                            <div>
+                                <h5 class="fw-bold mb-1">Sarah K.</h5>
+                                <p class="text-muted small mb-0">Green Entrepreneur, Uganda</p>
+                                <div class="text-warning mt-1">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-quote">
+                            "LEGTA helped me discover my purpose and gave me the tools to start my eco-friendly business. The mindset workshops changed everything! Today, I employ 5 other youth."
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="assets/david-leader.jpg" alt="David M." class="testimonial-image">
+                            <div>
+                                <h5 class="fw-bold mb-1">David M.</h5>
+                                <p class="text-muted small mb-0">Project Coordinator, Kenya</p>
+                                <div class="text-warning mt-1">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-quote">
+                            "Through LEGTA's joint investment program, we started a community recycling project that now employs 15 youth. Together, we're making real change in our community."
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="assets/amina-innovator.jpg" alt="Amina J." class="testimonial-image">
+                            <div>
+                                <h5 class="fw-bold mb-1">Amina J.</h5>
+                                <p class="text-muted small mb-0">Social Innovator, Tanzania</p>
+                                <div class="text-warning mt-1">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-quote">
+                            "The innovation bootcamp transformed my idea into a viable social enterprise. LEGTA's mentorship and network were invaluable to our success. Now we're scaling across East Africa."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Partners Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Trusted Partners</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Collaborating with organizations committed to youth empowerment and environmental sustainability across Africa.
+            </p>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="partner-logo">
+                        <img src="assets/partner-1.png" alt="Partner 1" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="partner-logo">
+                        <img src="assets/partner-2.png" alt="Partner 2" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="partner-logo">
+                        <img src="assets/partner-3.png" alt="Partner 3" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="partner-logo">
+                        <img src="assets/partner-4.png" alt="Partner 4" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="partner-logo">
+                        <img src="assets/partner-5.png" alt="Partner 5" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="partner-logo">
+                        <img src="assets/partner-6.png" alt="Partner 6" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section" data-aos="zoom-in">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 text-center text-lg-start">
+                        <h2 class="text-white mb-3">Ready to Be Part of the Movement?</h2>
+                        <p class="text-white-50 fs-5 mb-lg-0 mb-4">
+                            Join thousands of young Africans who are transforming their lives and communities with LEGTA.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <a href="join-program.html" class="btn btn-light btn-lg px-5 py-3 fw-bold" style="color: #144704; border-radius: 50px;">
+                            Join Now <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Icon -->
+    <a href="https://wa.me/256758943259" target="_blank" class="whatsapp-float">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Help Chat Bot -->
+    <div id="chatbot-container">
+        <div id="chatbot-window">
+            <div id="chatbot-header" class="d-flex justify-content-between align-items-center">
+                <h6 class="mb-0"><i class="bi bi-robot me-2"></i>LEGTA Assistant</h6>
+                <button id="close-chat" style="background: none; border: none; color: white; cursor: pointer; font-size: 1.5rem;">×</button>
+            </div>
+            <div id="chat-messages">
+                <div style="background: #f0f0f0; padding: 12px; border-radius: 15px; margin-bottom: 12px;">
+                    <strong>LEGTA Assistant:</strong> Hello! 👋 I'm here to help you learn about Let's Grow Together Africa. You can ask me about our programs, events, how to join, partnerships, and more!
+                </div>
+            </div>
+            <div style="padding: 15px; border-top: 1px solid #eee; background: white;">
+                <div class="input-group">
+                    <input type="text" id="chat-input" placeholder="Type your question..." class="form-control" style="border-radius: 50px 0 0 50px; border: 2px solid #144704;">
+                    <button id="send-chat" style="background: #144704; color: white; border: none; padding: 8px 20px; border-radius: 0 50px 50px 0; cursor: pointer;">
+                        <i class="bi bi-send"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-toggle">
+            <i class="bi bi-chat-dots"></i>
+        </button>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="footer-logo me-3">
+                        <div>
+                            <h4 class="text-white mb-1 fw-bold">Let's Grow Together</h4>
+                            <p style="color: #ce7815; font-weight: 600;">Africa</p>
+                        </div>
+                    </div>
+                    <p class="text-white-50 mb-4">
+                        Empowering Africa's youth through purpose, innovation, and collective action. Building sustainable communities and protecting our environment for future generations.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white fw-bold mb-4" style="color: #ce7815 !important;">Quick Links</h5>
+                    <div class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="mission.html">Our Mission</a>
+                        <a href="vision.html">Our Vision</a>
+                        <a href="teams.html">Our Team</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white fw-bold mb-4" style="color: #ce7815 !important;">Programs</h5>
+                    <div class="footer-nav">
+                        <a href="youth-empowerment.html">Youth Empowerment</a>
+                        <a href="environmental-projects.html">Environmental Projects</a>
+                        <a href="innovation-hub.html">Innovation Hub</a>
+                        <a href="joint-investments.html">Joint Investments</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white fw-bold mb-4" style="color: #ce7815 !important;">Get Involved</h5>
+                    <div class="footer-nav">
+                        <a href="volunteer.html">Volunteer</a>
+                        <a href="partner.html">Partner With Us</a>
+                        <a href="mentor.html">Become a Mentor</a>
+                        <a href="donate.html">Support Our Work</a>
+                        <a href="join-program.html">Join Programs</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-12 mb-4">
+                    <h5 class="text-white fw-bold mb-4" style="color: #ce7815 !important;">Newsletter</h5>
+                    <p class="text-white-50 small">Subscribe to get updates on our programs and events.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control newsletter-input" placeholder="Your email" aria-label="Your email">
+                        <button class="btn" style="background: #ce7815; color: white; border-radius: 0 10px 10px 0;" type="button">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4" style="background-color: rgba(255,255,255,0.1);">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white-50 small">&copy; 2026 Let's Grow Together Africa. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white-50 text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="#" class="text-white-50 text-decoration-none small me-3">Terms of Service</a>
+                    <a href="#" class="text-white-50 text-decoration-none small">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Scroll Effect for Navbar -->
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotToggle = document.getElementById('chatbot-toggle');
+            const chatbotWindow = document.getElementById('chatbot-window');
+            const closeChat = document.getElementById('close-chat');
+            const sendButton = document.getElementById('send-chat');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+            
+            // LEGTA-specific responses
+            const responses = {
+                'mission': 'Our mission is to empower African youth through mindset transformation, purpose discovery, innovation, and collective action for sustainable development and environmental protection.',
+                'vision': 'To foster a youth-led revolution that transforms mindsets and unites young people toward purposeful living, innovation, job creation, and environmental stewardship across Africa.',
+                'programs': 'We offer 4 core programs: 1) Youth Empowerment - mindset workshops & mentorship 2) Environmental Projects - green campaigns & conservation 3) Innovation Hub - bootcamps & incubation 4) Joint Investments - investment circles & funding',
+                'join': 'You can join by: 1) Volunteering 2) Becoming a mentor 3) Participating in our programs 4) Joining investment circles 5) Partnering with us. Visit our "Get Involved" section!',
+                'environment': 'We promote environmental protection through afforestation campaigns, waste management programs, sustainable agriculture training, and green enterprise development.',
+                'investment': 'Our joint investment programs allow youth to pool resources (starting from $10/month) and invest collectively in sustainable ventures. Contact us to learn about current opportunities!',
+                'contact': 'You can reach us via email: info@letsgrowtogetherafrica.org, phone: +256 758 943259, or visit our office in Kampala, Uganda.',
+                'events': 'Our upcoming events include: Youth Innovation Summit (April 15-17), Green Africa Campaign (May 22), and Entrepreneurship Bootcamp (June 10-14). Check our Events page for details!',
+                'default': 'I can help you with information about our mission, vision, programs, how to join, environmental initiatives, investment opportunities, events, and contact details. What would you like to know?'
+            };
+            
+            chatbotToggle.addEventListener('click', () => {
+                chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+            });
+            
+            closeChat.addEventListener('click', () => {
+                chatbotWindow.style.display = 'none';
+            });
+            
+            function addMessage(message, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.style.background = isUser ? '#e3f2fd' : '#f0f0f0';
+                messageDiv.style.padding = '12px';
+                messageDiv.style.borderRadius = '15px';
+                messageDiv.style.marginBottom = '12px';
+                messageDiv.style.maxWidth = '85%';
+                messageDiv.style.alignSelf = isUser ? 'flex-end' : 'flex-start';
+                messageDiv.style.marginLeft = isUser ? 'auto' : '0';
+                messageDiv.innerHTML = `<strong>${isUser ? 'You' : 'LEGTA Assistant'}:</strong> ${message}`;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            function processQuestion(question) {
+                const lowerQuestion = question.toLowerCase();
+                let response = responses.default;
+                
+                if (lowerQuestion.includes('mission') || lowerQuestion.includes('purpose')) {
+                    response = responses.mission;
+                } else if (lowerQuestion.includes('vision') || lowerQuestion.includes('goal')) {
+                    response = responses.vision;
+                } else if (lowerQuestion.includes('program') || lowerQuestion.includes('activity') || lowerQuestion.includes('what do you do')) {
+                    response = responses.programs;
+                } else if (lowerQuestion.includes('join') || lowerQuestion.includes('participate') || lowerQuestion.includes('volunteer') || lowerQuestion.includes('involve')) {
+                    response = responses.join;
+                } else if (lowerQuestion.includes('environment') || lowerQuestion.includes('climate') || lowerQuestion.includes('green') || lowerQuestion.includes('tree') || lowerQuestion.includes('afforestation')) {
+                    response = responses.environment;
+                } else if (lowerQuestion.includes('investment') || lowerQuestion.includes('fund') || lowerQuestion.includes('money') || lowerQuestion.includes('startup') || lowerQuestion.includes('circle')) {
+                    response = responses.investment;
+                } else if (lowerQuestion.includes('contact') || lowerQuestion.includes('reach') || lowerQuestion.includes('email') || lowerQuestion.includes('phone') || lowerQuestion.includes('address')) {
+                    response = responses.contact;
+                } else if (lowerQuestion.includes('event') || lowerQuestion.includes('summit') || lowerQuestion.includes('bootcamp') || lowerQuestion.includes('workshop')) {
+                    response = responses.events;
+                }
+                
+                return response;
+            }
+            
+            sendButton.addEventListener('click', () => {
+                const question = chatInput.value.trim();
+                if (question) {
+                    addMessage(question, true);
+                    chatInput.value = '';
+                    
+                    setTimeout(() => {
+                        const response = processQuestion(question);
+                        addMessage(response);
+                    }, 500);
+                }
+            });
+            
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendButton.click();
+                }
+            });
+            
+            // Auto-open chatbot on page load after 3 seconds
+            setTimeout(() => {
+                chatbotWindow.style.display = 'block';
+                addMessage("👋 Welcome to Let's Grow Together Africa! I'm your virtual assistant. Feel free to ask me anything about our programs, events, or how you can get involved in our movement across Africa!");
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

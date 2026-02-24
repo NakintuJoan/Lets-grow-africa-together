@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Investment Clubs – Let's Grow Together Africa</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      padding-top: 80px;
+      color: #333;
+    }
+    
+    /* LEGTA Brand Colors */
+    .lgta-green { color: #144704; }
+    .lgta-gold { color: #ce7815; }
+    .lgta-bg-green { background-color: #144704; }
+    .lgta-bg-gold { background-color: #ce7815; }
+    
+    .btn-lgta {
+      background-color: #144704;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-lgta:hover {
+      background-color: #0a2e02;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(20, 71, 4, 0.3);
+    }
+    
+    .btn-outline-lgta {
+      border: 2px solid #144704;
+      color: #144704;
+      background: transparent;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-lgta:hover {
+      background-color: #144704;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Pre-Nav */
+    .pre-nav {
+      background: linear-gradient(to right, #144704, #2a7a1a);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+    }
+    .pre-nav .social-icons a {
+      margin-right: 15px;
+      font-size: 1.2rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .pre-nav .social-icons a:hover {
+      color: #ce7815;
+      transform: translateY(-3px);
+    }
+    .pre-nav .btn {
+      background-color: #ce7815;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    .pre-nav .btn:hover {
+      background-color: #b5650c;
+      transform: translateY(-2px);
+    }
+    
+    /* Navbar */
+    nav.navbar {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      right: 0;
+      z-index: 1020;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: white !important;
+    }
+    .navbar-brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    .nav-link {
+      color: #144704 !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 0 5px;
+    }
+    .nav-link:hover {
+      color: #ce7815 !important;
+      transform: translateY(-2px);
+    }
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .dropdown-item {
+      color: #144704;
+      transition: all 0.3s ease;
+    }
+    .dropdown-item:hover {
+      background: #144704;
+      color: white;
+      padding-left: 25px;
+    }
+    
+    /* Hero Section */
+    .hero-investment {
+      background: linear-gradient(135deg, #0a3b0a, #1e5e1e);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-investment::before {
+      content: "💰";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      bottom: -50px;
+      left: -30px;
+      transform: rotate(-15deg);
+    }
+    .hero-investment::after {
+      content: "🤝";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      top: -50px;
+      right: -30px;
+      transform: rotate(15deg);
+    }
+    .hero-investment h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+    .hero-investment p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Section Title */
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #144704;
+      margin-bottom: 50px;
+      position: relative;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+    .section-title:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: #ce7815;
+      border-radius: 5px;
+    }
+    
+    /* Cards */
+    .investment-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      height: 100%;
+      border: none;
+    }
+    .investment-card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 25px 50px rgba(20, 71, 4, 0.2);
+    }
+    .investment-card-body {
+      padding: 30px;
+    }
+    .investment-icon {
+      font-size: 2.5rem;
+      color: #ce7815;
+      margin-bottom: 20px;
+    }
+    
+    /* Circle Cards */
+    .circle-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      height: 100%;
+      transition: all 0.3s ease;
+      border-bottom: 4px solid transparent;
+    }
+    .circle-card:hover {
+      transform: translateY(-10px);
+      border-bottom: 4px solid #ce7815;
+      box-shadow: 0 15px 35px rgba(20, 71, 4, 0.15);
+    }
+    .circle-number {
+      width: 50px;
+      height: 50px;
+      background: #144704;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    
+    /* Stats */
+    .stat-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .stat-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(20, 71, 4, 0.1);
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #144704;
+    }
+    .stat-label {
+      font-size: 1.1rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #144704;
+      color: white;
+      padding: 50px 0 20px;
+      margin-top: 50px;
+    }
+    .footer-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .footer-nav a {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .footer-nav a:hover {
+      color: #ce7815;
+      padding-left: 8px;
+    }
+    
+    /* WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+    
+    /* Chatbot */
+    #chatbot-container {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      z-index: 1000;
+    }
+    #chatbot-window {
+      display: none;
+      width: 320px;
+      height: 450px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+      border: 2px solid #144704;
+      overflow: hidden;
+    }
+    #chatbot-toggle {
+      background: #144704;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(20,71,4,0.4);
+      transition: all 0.3s ease;
+    }
+    #chatbot-toggle:hover {
+      background: #ce7815;
+      transform: scale(1.1) rotate(10deg);
+    }
+    
+    /* Features */
+    .feature-item {
+      display: flex;
+      margin-bottom: 25px;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: #144704;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    
+    /* Campus club badge */
+    .club-badge {
+      background: #ce7815;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pre-Nav -->
+  <div class="pre-nav">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="donate.html" class="btn btn-sm">Support Our Mission</a>
+      <div class="social-icons d-flex">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="rounded-circle me-2">
+        <span style="color: #144704; font-weight: 700;"> Let's Grow Together Africa</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
+              <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
+              <li><a class="dropdown-item" href="teams.html">Our Team</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Programs</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="youth-empowerment.html">Youth Empowerment</a></li>
+              <li><a class="dropdown-item" href="environmental-projects.html">Environmental Projects</a></li>
+              <li><a class="dropdown-item" href="innovation-hub.html">Innovation Hub</a></li>
+              <li><a class="dropdown-item" href="joint-investments.html">Joint Investments</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Get Involved</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="volunteer.html">Volunteer</a></li>
+              <li><a class="dropdown-item" href="partner.html">Partner With Us</a></li>
+              <li><a class="dropdown-item" href="mentor.html">Become a Mentor</a></li>
+              <li><a class="dropdown-item" href="join-movement.html">Join the Movement</a></li>
+              <li><a class="dropdown-item" href="donate.html">Support Our Work</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-investment">
+    <div class="container">
+      <span class="club-badge">🎓 CAMPUS INVESTMENT CLUBS</span>
+      <h1>JOINT INVESTMENTS</h1>
+      <p class="lead">Student-led clubs in schools, universities & institutes</p>
+      <p class="fs-5 mt-4">Pooling resources, multiplying impact – we help students form investment clubs to fund ventures, share profits, and grow together.</p>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+          <h2 class="section-title text-start" style="text-align: left !important;">Why a Campus Investment Club?</h2>
+          <p class="fs-5 mb-4">At Let's Grow Together Africa, we empower students to form joint investment clubs within their schools, universities, and institutes. By combining small individual contributions, students gain access to real investment opportunities, learn financial literacy, and support youth-led ventures.</p>
+          <div class="d-flex mb-3">
+            <i class="bi bi-people-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Peer Collaboration</h5>
+              <p>Learn and invest alongside fellow students, building networks and friendships.</p>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <i class="bi bi-bar-chart-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Hands-On Experience</h5>
+              <p>Gain practical investment skills before graduation.</p>
+            </div>
+          </div>
+          <div class="d-flex mb-4">
+            <i class="bi bi-cash-stack lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Seed Funding for Student Ideas</h5>
+              <p>Your club can fund fellow students' startups and projects.</p>
+            </div>
+          </div>
+          <a href="join-movement.html" class="btn btn-lgta btn-lg">Start a Club at Your Institution</a>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <img src="assets/Gemini_Generated_Image_vjjiclvjjiclvjji.png" alt="Student Investment Club" class="img-fluid rounded-4 shadow-lg" style="width: 100%; height: 450px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Philosophy -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="bg-white p-5 rounded-5 shadow-lg">
+            <h3 class="fw-bold lgta-green text-center mb-4">The LEGTA Student Investment Philosophy</h3>
+            <p class="fs-5 text-center mb-4">"We believe in having a combined effort toward growth and development lessens the load that one has to carry in order to attain what they desire in life."</p>
+            <div class="row mt-5">
+              <div class="col-md-4 text-center">
+                <div class="h1 lgta-gold mb-3">🤝</div>
+                <h5 class="fw-bold">Combined Effort</h5>
+                <p class="text-muted">Students unite – we grow as one</p>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="h1 lgta-gold mb-3">🔄</div>
+                <h5 class="fw-bold">Reinvestment</h5>
+                <p class="text-muted">Profits fuel more student ventures</p>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="h1 lgta-gold mb-3">🌱</div>
+                <h5 class="fw-bold">Sustainable Ventures</h5>
+                <p class="text-muted">Eco-friendly, youth-led enterprises</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Investment Clubs (formerly Investment Circles) -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Student Investment Clubs</h2>
+      <p class="text-center fs-5 mb-5">Choose the level that fits your campus group – from beginners to advanced investors.</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="circle-card">
+            <div class="circle-number">1</div>
+            <h4 class="fw-bold lgta-green">Seed Club</h4>
+            <p class="text-muted">Perfect for high school or first-year university students. Members contribute as little as $5–10 monthly. Focus on micro-enterprises and community projects.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> $5-50 monthly contributions</li>
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> Micro-enterprise funding</li>
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> Quarterly dividends</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="circle-card">
+            <div class="circle-number">2</div>
+            <h4 class="fw-bold lgta-green">Growth Club</h4>
+            <p class="text-muted">Ideal for university students with some income (part-time, allowances). Focus on scaling youth-led startups and social enterprises.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> $50-200 monthly contributions</li>
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> Startup funding</li>
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> Bi-annual dividends</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="circle-card">
+            <div class="circle-number">3</div>
+            <h4 class="fw-bold lgta-green">Impact Club</h4>
+            <p class="text-muted">Advanced club for graduate students and young professionals. Focus on green enterprises and high-impact ventures.</p>
+            <ul class="list-unstyled mt-3">
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> $200+ monthly contributions</li>
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> Green enterprise funding</li>
+              <li><i class="bi bi-check-lg lgta-gold me-2"></i> Annual dividends</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Start a Club at Your Institution -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Start a Club at Your School, University or Institute</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-1-lg"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold lgta-green">Gather Interested Students</h5>
+              <p class="text-muted mb-0">Find 5–20 fellow students who want to learn about investing and pool resources. You can start as an informal group.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-2-lg"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold lgta-green">Register Your Club with LEGTA</h5>
+              <p class="text-muted mb-0">Fill out a simple online form and we'll provide you with a club kit: constitution, investment guidelines, and access to our network.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-3-lg"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold lgta-green">Attend Training & Orientation</h5>
+              <p class="text-muted mb-0">We offer workshops on financial literacy, venture analysis, and democratic decision-making – on campus or virtually.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-4-lg"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold lgta-green">Start Pooling & Investing</h5>
+              <p class="text-muted mb-0">Open a joint account, collect contributions, and begin reviewing investment opportunities from our innovation hub.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="bi bi-5-lg"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold lgta-green">Grow & Reinvest</h5>
+              <p class="text-muted mb-0">Monitor your investments, celebrate wins, and reinvest profits to compound your impact.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="join-movement.html" class="btn btn-lgta btn-lg px-5">Start Your Campus Club</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- === NEW DOWNLOADABLE FORMS SECTION === -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h3 class="fw-bold lgta-green mb-4 section-title" style="margin-bottom: 2rem;">Download & Submit Your Forms</h3>
+      
+      <p class="fs-5 mb-5 text-muted">
+        Choose the form that fits your need, fill it out (on phone or computer), save it,<br>
+        and send the completed PDF to us via WhatsApp:
+        <strong>+256 758 943259</strong>
+      </p>
+
+      <div class="row justify-content-center g-4">
+        <!-- Start a New Club -->
+        <div class="col-md-6 col-lg-5">
+          <div class="card border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+            <div class="card-body text-center p-5 d-flex flex-column justify-content-between">
+              <div>
+                <i class="bi bi-journal-plus lgta-gold fs-1 mb-4 d-block"></i>
+                <h4 class="fw-bold lgta-green mb-3">Start a New Club</h4>
+                <p class="text-muted mb-4">
+                  For groups of 5 or more students ready to launch an investment club at their school or university.
+                </p>
+              </div>
+              <a href="assets/forms/LEGTA_Campus_Club_Registration_Form_Start_a_Club.pdf" 
+                 download 
+                 class="btn btn-lgta btn-lg px-5 py-3 mt-3">
+                <i class="bi bi-download me-2"></i> Download Start Club Form
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Join an Existing Club -->
+        <div class="col-md-6 col-lg-5">
+          <div class="card border-0 shadow-lg h-100 rounded-4 overflow-hidden">
+            <div class="card-body text-center p-5 d-flex flex-column justify-content-between">
+              <div>
+                <i class="bi bi-person-plus lgta-gold fs-1 mb-4 d-block"></i>
+                <h4 class="fw-bold lgta-green mb-3">Join an Existing Club</h4>
+                <p class="text-muted mb-4">
+                  For individual students who want to join an investment club already running on their campus.
+                </p>
+              </div>
+              <a href="assets/forms/LEGTA_Campus_Club_Join_Form.pdf" 
+                 download 
+                 class="btn btn-lgta btn-lg px-5 py-3 mt-3">
+                <i class="bi bi-download me-2"></i> Download Join Club Form
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3">
+        <p class="text-muted fs-6">
+          <strong>No registration fee required.</strong><br>
+          We usually respond within 24–48 hours with next steps, starter kit, and training information.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Campus Clubs</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">$90K+</div>
+            <div class="stat-label">Pooled Student Capital</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Student-Led Ventures Funded</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">350+</div>
+            <div class="stat-label">Student Investors</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Opportunities -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Ventures Looking for Student Investment</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="investment-card">
+            <div class="investment-card-body">
+              <div class="investment-icon">
+                <i class="bi bi-tree"></i>
+              </div>
+              <h4 class="fw-bold lgta-green">Campus Organic Snacks</h4>
+              <p class="text-muted">Student-run enterprise processing local fruits into dried snacks. Seeking $5,000 for equipment.</p>
+              <div class="mt-3">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Funding Progress</span>
+                  <span class="fw-bold">65%</span>
+                </div>
+                <div class="progress mb-3" style="height: 10px;">
+                  <div class="progress-bar" style="width: 65%; background: #144704;"></div>
+                </div>
+                <p class="fw-bold lgta-green mb-0">Minimum investment: $25</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="investment-card">
+            <div class="investment-card-body">
+              <div class="investment-icon">
+                <i class="bi bi-recycle"></i>
+              </div>
+              <h4 class="fw-bold lgta-green">University Recycling Project</h4>
+              <p class="text-muted">Students converting campus waste into briquettes. Seeking $8,000 for a shredder.</p>
+              <div class="mt-3">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Funding Progress</span>
+                  <span class="fw-bold">40%</span>
+                </div>
+                <div class="progress mb-3" style="height: 10px;">
+                  <div class="progress-bar" style="width: 40%; background: #144704;"></div>
+                </div>
+                <p class="fw-bold lgta-green mb-0">Minimum investment: $20</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="investment-card">
+            <div class="investment-card-body">
+              <div class="investment-icon">
+                <i class="bi bi-phone"></i>
+              </div>
+              <h4 class="fw-bold lgta-green">Peer-to-Peer Tutoring App</h4>
+              <p class="text-muted">EdTech platform built by students, for students. Seeking $12,000 for development.</p>
+              <div class="mt-3">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Funding Progress</span>
+                  <span class="fw-bold">25%</span>
+                </div>
+                <div class="progress mb-3" style="height: 10px;">
+                  <div class="progress-bar" style="width: 25%; background: #144704;"></div>
+                </div>
+                <p class="fw-bold lgta-green mb-0">Minimum investment: $30</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Student Investor Stories</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-success rounded-circle" style="width: 60px; height: 60px; background: #144704 !important;"></div>
+              <div class="ms-3">
+                <h5 class="fw-bold mb-0">Amina Diallo</h5>
+                <small class="text-muted">Seed Club, University of Nairobi</small>
+              </div>
+            </div>
+            <p class="fst-italic">"Our club started with 12 students each contributing $10 a month. Within a year we funded a campus cafeteria expansion and earned 20% return. Now we're investing in three more student businesses!"</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-success rounded-circle" style="width: 60px; height: 60px; background: #144704 !important;"></div>
+              <div class="ms-3">
+                <h5 class="fw-bold mb-0">Brian Ochieng</h5>
+                <small class="text-muted">Growth Club, Makerere University</small>
+              </div>
+            </div>
+            <p class="fst-italic">"Being part of an investment club taught me more than any finance class. We pooled $30,000 and invested in a solar kiosk business run by recent grads. It's profitable and we're already planning our next move."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="p-5 rounded-5 text-white text-center" style="background: linear-gradient(145deg, #144704, #1a5a06);">
+            <h3 class="fw-bold mb-3 fs-2">Start a Club at Your Campus</h3>
+            <p class="mb-4 fs-5">Join a network of student investors across Africa. We provide the tools, training, and opportunities.</p>
+            <a href="assets/forms/LEGTA_Campus_Club_Registration_Form_Start_a_Club.pdf" download class="btn btn-light btn-lg px-5 py-3 fw-bold me-3" style="color: #144704;">
+              <i class="bi bi-download me-2"></i> Download Start Form
+            </a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">Request Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 d-flex align-items-center">
+          <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="footer-logo me-3">
+          <h4 class="fs-4 fw-bold">Let's Grow Together Africa</h4>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold lgta-gold">Quick Links</h5>
+          <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="vision.html">Our Vision</a>
+            <a href="teams.html">Our Team</a>
+            <a href="youth-empowerment.html">Youth Empowerment</a>
+            <a href="environmental-projects.html">Environmental Projects</a>
+            <a href="innovation-hub.html">Innovation Hub</a>
+            <a href="joint-investments.html">Joint Investments</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold lgta-gold">Connect With Us</h5>
+          <div class="d-flex fs-3 mb-3">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <p><i class="bi bi-envelope me-2"></i> info@letsgrowtogetherafrica.org</p>
+          <p><i class="bi bi-telephone me-2"></i> +256 758 943259</p>
+        </div>
+      </div>
+      <hr style="background: #ce7815;">
+      <p class="text-center mb-0">© 2026 Let's Grow Together Africa. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/256758943259" class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Chatbot -->
+  <div id="chatbot-container">
+    <div id="chatbot-window">
+      <div style="background: #144704; color: white; padding: 15px; border-radius: 10px 10px 0 0;">
+        <h6 style="margin: 0; font-weight: 600;"><i class="bi bi-robot me-2"></i>LEGTA Assistant</h6>
+        <button id="close-chat" style="background: none; border: none; color: white; float: right; cursor: pointer;">×</button>
+      </div>
+      <div id="chat-messages">
+        <div style="background: #f0f0f0; padding: 10px; border-radius: 10px; margin-bottom: 10px;">
+          <strong>LEGTA Assistant:</strong> Hello! Welcome to Campus Investment Clubs. Ask me how to start a club at your school, current opportunities, or student success stories.
+        </div>
+      </div>
+      <div style="padding: 15px; border-top: 1px solid #ddd; background: white;">
+        <div class="input-group">
+          <input type="text" id="chat-input" placeholder="Type your question..." class="form-control" style="border-radius: 30px 0 0 30px;">
+          <button id="send-chat" style="background: #144704; color: white; border: none; padding: 8px 20px; border-radius: 0 30px 30px 0; cursor: pointer;">
+            <i class="bi bi-send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button id="chatbot-toggle">
+      <i class="bi bi-chat-dots"></i>
+    </button>
+  </div>
+
+  <script>
+    // Chatbot functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatbotToggle = document.getElementById('chatbot-toggle');
+      const chatbotWindow = document.getElementById('chatbot-window');
+      const closeChat = document.getElementById('close-chat');
+      const sendButton = document.getElementById('send-chat');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+      
+      chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+      });
+      
+      closeChat.addEventListener('click', () => {
+        chatbotWindow.style.display = 'none';
+      });
+      
+      function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.style.background = isUser ? '#e3f2fd' : '#f0f0f0';
+        messageDiv.style.padding = '10px';
+        messageDiv.style.borderRadius = '10px';
+        messageDiv.style.marginBottom = '10px';
+        messageDiv.innerHTML = `<strong>${isUser ? 'You' : 'LEGTA Assistant'}:</strong> ${message}`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      sendButton.addEventListener('click', () => {
+        const question = chatInput.value.trim();
+        if (question) {
+          addMessage(question, true);
+          chatInput.value = '';
+          
+          setTimeout(() => {
+            if (question.toLowerCase().includes('start') || question.toLowerCase().includes('club')) {
+              addMessage("To start a campus club, you need at least 5 interested students. Register online and we'll send you a starter kit. Would you like the registration link?");
+            } else if (question.toLowerCase().includes('cost') || question.toLowerCase().includes('contribute')) {
+              addMessage("Clubs set their own contribution levels. Most start with $5–20 per month. You decide as a group!");
+            } else if (question.toLowerCase().includes('return') || question.toLowerCase().includes('profit')) {
+              addMessage("Student clubs have seen average returns of 15-25% annually, but remember investing involves risk. We help you diversify.");
+            } else {
+              addMessage("Campus investment clubs are a fun, practical way to learn finance and support student entrepreneurs. What would you like to know more about?");
+            }
+          }, 500);
+        }
+      });
+      
+      chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          sendButton.click();
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

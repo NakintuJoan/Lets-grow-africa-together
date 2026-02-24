@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Become a Mentor - Let's Grow Together Africa</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      padding-top: 80px;
+      color: #333;
+    }
+    
+    /* LEGTA Brand Colors */
+    .lgta-green { color: #144704; }
+    .lgta-gold { color: #ce7815; }
+    .lgta-bg-green { background-color: #144704; }
+    .lgta-bg-gold { background-color: #ce7815; }
+    
+    .btn-lgta {
+      background-color: #144704;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-lgta:hover {
+      background-color: #0a2e02;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(20, 71, 4, 0.3);
+    }
+    
+    .btn-outline-lgta {
+      border: 2px solid #144704;
+      color: #144704;
+      background: transparent;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-lgta:hover {
+      background-color: #144704;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Pre-Nav */
+    .pre-nav {
+      background: linear-gradient(to right, #144704, #2a7a1a);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+    }
+    .pre-nav .social-icons a {
+      margin-right: 15px;
+      font-size: 1.2rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .pre-nav .social-icons a:hover {
+      color: #ce7815;
+      transform: translateY(-3px);
+    }
+    .pre-nav .btn {
+      background-color: #ce7815;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    nav.navbar {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      right: 0;
+      z-index: 1020;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: white !important;
+    }
+    .navbar-brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    .nav-link {
+      color: #144704 !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #ce7815 !important;
+      transform: translateY(-2px);
+    }
+    
+    .hero-mentor {
+      background: linear-gradient(135deg, #0a3b0a, #1e5e1e);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-mentor::before {
+      content: "🎓";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      bottom: -50px;
+      left: -30px;
+    }
+    .hero-mentor::after {
+      content: "🤝";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      top: -50px;
+      right: -30px;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #144704;
+      margin-bottom: 50px;
+      position: relative;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+    .section-title:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: #ce7815;
+    }
+    
+    .mentor-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      height: 100%;
+    }
+    .mentor-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(20, 71, 4, 0.2);
+    }
+    
+    .stat-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #144704;
+    }
+    
+    footer {
+      background-color: #144704;
+      color: white;
+      padding: 50px 0 20px;
+      margin-top: 50px;
+    }
+    .footer-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .footer-nav a {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+      text-decoration: none;
+    }
+    .footer-nav a:hover {
+      color: #ce7815;
+      padding-left: 8px;
+    }
+    
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+      z-index: 1000;
+    }
+    
+    #chatbot-container {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      z-index: 1000;
+    }
+    #chatbot-window {
+      display: none;
+      width: 320px;
+      height: 450px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+      border: 2px solid #144704;
+      overflow: hidden;
+    }
+    #chatbot-toggle {
+      background: #144704;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(20,71,4,0.4);
+      transition: all 0.3s ease;
+    }
+    #chatbot-toggle:hover {
+      background: #ce7815;
+      transform: scale(1.1) rotate(10deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- Pre-Nav -->
+  <div class="pre-nav">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="donate.html" class="btn btn-sm">Support Our Mission</a>
+      <div class="social-icons d-flex">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="rounded-circle me-2">
+        <span style="color: #144704; font-weight: 700;">Let's Grow Together Africa</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
+              <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
+              <li><a class="dropdown-item" href="teams.html">Our Team</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programs</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="youth-empowerment.html">Youth Empowerment</a></li>
+              <li><a class="dropdown-item" href="environmental-projects.html">Environmental Projects</a></li>
+              <li><a class="dropdown-item" href="innovation-hub.html">Innovation Hub</a></li>
+              <li><a class="dropdown-item" href="joint-investments.html">Joint Investments</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Get Involved</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="volunteer.html">Volunteer</a></li>
+              <li><a class="dropdown-item" href="partner.html">Partner With Us</a></li>
+              <li><a class="dropdown-item" href="mentor.html">Become a Mentor</a></li>
+              <li><a class="dropdown-item" href="donate.html">Support Our Work</a></li>
+              <li><a class="dropdown-item" href="join-program.html">Join Our Programs</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-mentor">
+    <div class="container">
+      <h1>BECOME A MENTOR</h1>
+      <p class="lead">Shape the next generation of African leaders.</p>
+      <p class="fs-5 mt-4">Share your knowledge, experience, and wisdom to empower young people across the continent</p>
+    </div>
+  </section>
+
+  <!-- Why Mentor -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+          <h2 class="section-title text-start" style="text-align: left !important;">Why Become a Let's Grow Together Africa Mentor?</h2>
+          <p class="fs-5 mb-4">Young people across Africa lack adequate mentorship and guidance. Your experience and insights can help them discover their purpose, build their skills, and create sustainable ventures.</p>
+          <div class="d-flex mb-3">
+            <i class="bi bi-check-circle-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Impact a Life</h5>
+              <p>Directly influence and guide a young person's journey</p>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <i class="bi bi-check-circle-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Give Back</h5>
+              <p>Share your expertise and experience with the next generation</p>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <i class="bi bi-check-circle-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Grow Your Network</h5>
+              <p>Connect with other mentors and young innovators across Africa</p>
+            </div>
+          </div>
+          <div class="d-flex mb-4">
+            <i class="bi bi-check-circle-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Recognition</h5>
+              <p>Receive mentorship certification and recognition</p>
+            </div>
+          </div>
+          <a href="#mentor-form" class="btn btn-lgta btn-lg">Apply as Mentor</a>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <img src="assets/hhh.jpeg" alt="Mentorship" class="img-fluid rounded-4 shadow-lg" style="width: 100%; height: 450px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">120+</div>
+            <div class="stat-label">Active Mentors</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Mentees</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Countries</div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="stat-box">
+            <div class="stat-number">85%</div>
+            <div class="stat-label">Success Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentorship Areas -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Mentorship Areas</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="mentor-card text-center">
+            <div class="display-3 lgta-gold mb-3">🎯</div>
+            <h4 class="fw-bold lgta-green">Purpose & Mindset</h4>
+            <p class="text-muted">Guide young people in discovering their life purpose, building confidence, and developing a growth mindset.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="mentor-card text-center">
+            <div class="display-3 lgta-gold mb-3">💼</div>
+            <h4 class="fw-bold lgta-green">Entrepreneurship</h4>
+            <p class="text-muted">Mentor youth-led startups in business planning, marketing, financial management, and scaling.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="mentor-card text-center">
+            <div class="display-3 lgta-gold mb-3">💻</div>
+            <h4 class="fw-bold lgta-green">Technology & Innovation</h4>
+            <p class="text-muted">Guide young innovators in product development, coding, UI/UX, and tech entrepreneurship.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="mentor-card text-center">
+            <div class="display-3 lgta-gold mb-3">🌱</div>
+            <h4 class="fw-bold lgta-green">Environmental Sustainability</h4>
+            <p class="text-muted">Mentor green enterprises, conservation projects, and climate action initiatives.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="mentor-card text-center">
+            <div class="display-3 lgta-gold mb-3">📊</div>
+            <h4 class="fw-bold lgta-green">Leadership</h4>
+            <p class="text-muted">Develop the next generation of African leaders through coaching and guidance.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="mentor-card text-center">
+            <div class="display-3 lgta-gold mb-3">🎓</div>
+            <h4 class="fw-bold lgta-green">Career Development</h4>
+            <p class="text-muted">Help youth navigate career paths, job applications, and professional growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentor Testimonials -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Meet Our Mentors</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-success rounded-circle" style="width: 70px; height: 70px; background: #144704 !important;"></div>
+              <div class="ms-3">
+                <h5 class="fw-bold mb-0">Dr. Catherine Mwangi</h5>
+                <small class="text-muted">Entrepreneurship Mentor, Kenya</small>
+              </div>
+            </div>
+            <p class="fst-italic">"Mentoring with Let's Grow Together Africa has been incredibly rewarding. I've guided three young entrepreneurs who now run successful businesses employing over 20 youth. This is how we build Africa's future."</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-success rounded-circle" style="width: 70px; height: 70px; background: #144704 !important;"></div>
+              <div class="ms-3">
+                <h5 class="fw-bold mb-0">Eng. Paul Okello</h5>
+                <small class="text-muted">Innovation Mentor, Uganda</small>
+              </div>
+            </div>
+            <p class="fst-italic">"I mentor young innovators at Let's Grow Together Africa Innovation Hub. Seeing their ideas transform into real products that solve community problems is the best reward. I learn as much as I teach."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentor Application Form -->
+  <section id="mentor-form" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="bg-white p-5 rounded-5 shadow-lg">
+            <h3 class="fw-bold lgta-green text-center mb-4">Apply to Become a Mentor</h3>
+            <p class="text-center mb-4">Share your expertise and make a lasting impact on Africa's youth.</p>
+            
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="tel" class="form-control" placeholder="Phone Number">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="Profession/Title">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="Country">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <select class="form-select">
+                    <option selected disabled>Primary Mentorship Area</option>
+                    <option>Purpose & Mindset</option>
+                    <option>Entrepreneurship</option>
+                    <option>Technology & Innovation</option>
+                    <option>Environmental Sustainability</option>
+                    <option>Leadership</option>
+                    <option>Career Development</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="4" placeholder="Tell us about your experience, expertise, and why you want to mentor with LEGTA..."></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-lgta btn-lg px-5">Submit Application</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentor Requirements -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="bg-white p-5 rounded-5 shadow-lg">
+            <h3 class="fw-bold lgta-green text-center mb-4">Mentor Requirements</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-3"><i class="bi bi-check-circle-fill lgta-gold me-2"></i> 3+ years professional experience</li>
+                  <li class="mb-3"><i class="bi bi-check-circle-fill lgta-gold me-2"></i> Passion for youth development</li>
+                  <li class="mb-3"><i class="bi bi-check-circle-fill lgta-gold me-2"></i> Willingness to commit 2-4 hours/month</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-3"><i class="bi bi-check-circle-fill lgta-gold me-2"></i> Good communication skills</li>
+                  <li class="mb-3"><i class="bi bi-check-circle-fill lgta-gold me-2"></i> Background check clearance</li>
+                  <li class="mb-3"><i class="bi bi-check-circle-fill lgta-gold me-2"></i> Attend mentor orientation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="p-5 rounded-5 text-white text-center" style="background: linear-gradient(145deg, #144704, #1a5a06);">
+            <h3 class="fw-bold mb-3 fs-2">Ready to Shape Africa's Future Leaders?</h3>
+            <p class="mb-4 fs-5">Join 120+ mentors already making a difference.</p>
+            <a href="#mentor-form" class="btn btn-light btn-lg px-5 py-3 fw-bold me-3" style="color: #144704;">Apply as Mentor</a>
+            <a href="join-program.html" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 d-flex align-items-center">
+          <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="footer-logo me-3">
+          <h4 class="fs-4 fw-bold">Let's Grow Together Africa</h4>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold lgta-gold">Quick Links</h5>
+          <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="vision.html">Our Vision</a>
+            <a href="teams.html">Our Team</a>
+            <a href="youth-empowerment.html">Youth Empowerment</a>
+            <a href="environmental-projects.html">Environmental Projects</a>
+            <a href="innovation-hub.html">Innovation Hub</a>
+            <a href="joint-investments.html">Joint Investments</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold lgta-gold">Connect With Us</h5>
+          <div class="d-flex fs-3 mb-3">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <p><i class="bi bi-envelope me-2"></i> mentorship@letsgrowtogetherafrica.org</p>
+          <p><i class="bi bi-telephone me-2"></i> +256 758 943259</p>
+        </div>
+      </div>
+      <hr style="background: #ce7815;">
+      <p class="text-center mb-0">&copy; 2026 Let's Grow Together Africa. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/256758943259" class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Chatbot -->
+  <div id="chatbot-container">
+    <div id="chatbot-window">
+      <div style="background: #144704; color: white; padding: 15px; border-radius: 10px 10px 0 0;">
+        <h6 style="margin: 0; font-weight: 600;"><i class="bi bi-robot me-2"></i>LEGTA Assistant</h6>
+        <button id="close-chat" style="background: none; border: none; color: white; float: right; cursor: pointer;">×</button>
+      </div>
+      <div id="chat-messages">
+        <div style="background: #f0f0f0; padding: 10px; border-radius: 10px; margin-bottom: 10px;">
+          <strong>LEGTA Assistant:</strong> Hello! Interested in becoming a mentor? I can tell you about mentorship areas, requirements, and the application process. How can I help?
+        </div>
+      </div>
+      <div style="padding: 15px; border-top: 1px solid #ddd; background: white;">
+        <div class="input-group">
+          <input type="text" id="chat-input" placeholder="Type your question..." class="form-control" style="border-radius: 30px 0 0 30px;">
+          <button id="send-chat" style="background: #144704; color: white; border: none; padding: 8px 20px; border-radius: 0 30px 30px 0; cursor: pointer;">
+            <i class="bi bi-send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button id="chatbot-toggle">
+      <i class="bi bi-chat-dots"></i>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatbotToggle = document.getElementById('chatbot-toggle');
+      const chatbotWindow = document.getElementById('chatbot-window');
+      const closeChat = document.getElementById('close-chat');
+      const sendButton = document.getElementById('send-chat');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+      
+      chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+      });
+      
+      closeChat.addEventListener('click', () => {
+        chatbotWindow.style.display = 'none';
+      });
+      
+      function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.style.background = isUser ? '#e3f2fd' : '#f0f0f0';
+        messageDiv.style.padding = '10px';
+        messageDiv.style.borderRadius = '10px';
+        messageDiv.style.marginBottom = '10px';
+        messageDiv.innerHTML = `<strong>${isUser ? 'You' : 'LEGTA Assistant'}:</strong> ${message}`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      sendButton.addEventListener('click', () => {
+        const question = chatInput.value.trim();
+        if (question) {
+          addMessage(question, true);
+          chatInput.value = '';
+          
+          setTimeout(() => {
+            if (question.toLowerCase().includes('requirement')) {
+              addMessage("Mentors need 3+ years professional experience, passion for youth development, 2-4 hours/month commitment, and must attend orientation. No prior mentoring experience required!");
+            } else if (question.toLowerCase().includes('area') || question.toLowerCase().includes('field')) {
+              addMessage("We have 6 mentorship areas: Purpose & Mindset, Entrepreneurship, Technology & Innovation, Environmental Sustainability, Leadership, and Career Development.");
+            } else if (question.toLowerCase().includes('apply')) {
+              addMessage("Complete the mentor application form on this page. Our mentorship coordinator will contact you within 5 business days for an interview and orientation.");
+            } else {
+              addMessage("To become a LEGTA mentor, complete the application form on this page. We're looking for professionals passionate about guiding Africa's next generation of leaders. How can I help you specifically?");
+            }
+          }, 500);
+        }
+      });
+      
+      chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          sendButton.click();
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Our Programs - Let's Grow Together Africa</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      padding-top: 80px;
+      color: #333;
+    }
+    
+    /* LEGTA Brand Colors */
+    .lgta-green { color: #144704; }
+    .lgta-gold { color: #ce7815; }
+    .lgta-bg-green { background-color: #144704; }
+    .lgta-bg-gold { background-color: #ce7815; }
+    
+    .btn-lgta {
+      background-color: #144704;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-lgta:hover {
+      background-color: #0a2e02;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(20, 71, 4, 0.3);
+    }
+    
+    .btn-outline-lgta {
+      border: 2px solid #144704;
+      color: #144704;
+      background: transparent;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-lgta:hover {
+      background-color: #144704;
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Pre-Nav */
+    .pre-nav {
+      background: linear-gradient(to right, #144704, #2a7a1a);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+    }
+    .pre-nav .social-icons a {
+      margin-right: 15px;
+      font-size: 1.2rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .pre-nav .social-icons a:hover {
+      color: #ce7815;
+      transform: translateY(-3px);
+    }
+    .pre-nav .btn {
+      background-color: #ce7815;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 8px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    nav.navbar {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      right: 0;
+      z-index: 1020;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: white !important;
+    }
+    .navbar-brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    .nav-link {
+      color: #144704 !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #ce7815 !important;
+      transform: translateY(-2px);
+    }
+    
+    .hero-join {
+      background: linear-gradient(135deg, #0a3b0a, #1e5e1e);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-join::before {
+      content: "🚀";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      bottom: -50px;
+      left: -30px;
+    }
+    .hero-join::after {
+      content: "🎯";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.1;
+      top: -50px;
+      right: -30px;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #144704;
+      margin-bottom: 50px;
+      position: relative;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+    .section-title:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: #ce7815;
+    }
+    
+    .program-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      height: 100%;
+      border: none;
+    }
+    .program-card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 25px 50px rgba(20, 71, 4, 0.2);
+    }
+    .program-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 5px solid #ce7815;
+    }
+    .program-card-body {
+      padding: 25px;
+    }
+    
+    .stat-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #144704;
+    }
+    
+    .join-form {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    
+    footer {
+      background-color: #144704;
+      color: white;
+      padding: 50px 0 20px;
+      margin-top: 50px;
+    }
+    .footer-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .footer-nav a {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+      text-decoration: none;
+    }
+    .footer-nav a:hover {
+      color: #ce7815;
+      padding-left: 8px;
+    }
+    
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(37,211,102,0.4);
+      z-index: 1000;
+    }
+    
+    #chatbot-container {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      z-index: 1000;
+    }
+    #chatbot-window {
+      display: none;
+      width: 320px;
+      height: 450px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+      border: 2px solid #144704;
+      overflow: hidden;
+    }
+    #chatbot-toggle {
+      background: #144704;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(20,71,4,0.4);
+      transition: all 0.3s ease;
+    }
+    #chatbot-toggle:hover {
+      background: #ce7815;
+      transform: scale(1.1) rotate(10deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- Pre-Nav -->
+  <div class="pre-nav">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="donate.html" class="btn btn-sm">Support Our Mission</a>
+      <div class="social-icons d-flex">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-twitter"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="rounded-circle me-2">
+        <span style="color: #144704; font-weight: 700;">  Let's Grow Together Africa</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="mission.html">Our Mission</a></li>
+              <li><a class="dropdown-item" href="vision.html">Our Vision</a></li>
+              <li><a class="dropdown-item" href="teams.html">Our Team</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programs</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="youth-empowerment.html">Youth Empowerment</a></li>
+              <li><a class="dropdown-item" href="environmental-projects.html">Environmental Projects</a></li>
+              <li><a class="dropdown-item" href="innovation-hub.html">Innovation Hub</a></li>
+              <li><a class="dropdown-item" href="joint-investments.html">Joint Investments</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Get Involved</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="volunteer.html">Volunteer</a></li>
+              <li><a class="dropdown-item" href="partner.html">Partner With Us</a></li>
+              <li><a class="dropdown-item" href="mentor.html">Become a Mentor</a></li>
+              <li><a class="dropdown-item" href="donate.html">Support Our Work</a></li>
+              <li><a class="dropdown-item" href="join-program.html">Join Our Programs</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-join">
+    <div class="container">
+      <h1>JOIN OUR PROGRAMS</h1>
+      <p class="lead">Be part of Africa's youth-led transformation movement.</p>
+      <p class="fs-5 mt-4">Discover your purpose, develop your skills, and create impact with thousands of young Africans</p>
+    </div>
+  </section>
+
+  <!-- Why Join -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+          <h2 class="section-title text-start" style="text-align: left !important;">Why Join Let's Grow Together Africa Programs?</h2>
+          <p class="fs-5 mb-4">Let's Grow Together Africa offers transformative programs for young people ready to thrive, innovate, and lead. Whether you're a student, unemployed youth, creative, innovator, or athlete, there's a place for you in our movement.</p>
+          <div class="d-flex mb-3">
+            <i class="bi bi-check-circle-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Discover Your Purpose</h5>
+              <p>Mindset workshops and purpose alignment coaching</p>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <i class="bi bi-check-circle-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Build Skills & Innovate</h5>
+              <p>Hands-on bootcamps in entrepreneurship, technology, and social innovation</p>
+            </div>
+          </div>
+          <div class="d-flex mb-3">
+            <i class="bi bi-check-circle-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Access Funding</h5>
+              <p>Join investment circles and access seed funding for your ventures</p>
+            </div>
+          </div>
+          <div class="d-flex mb-4">
+            <i class="bi bi-check-circle-fill lgta-gold fs-3 me-3"></i>
+            <div>
+              <h5 class="fw-bold">Join a Community</h5>
+              <p>Connect with youth leaders and mentors across Africa</p>
+            </div>
+          </div>
+          <a href="#join-form" class="btn btn-lgta btn-lg">Apply Now</a>
+        </div>
+        <div class="col-lg-6 mb-4">
+          <img src="assets/mee.jpg" alt="Join Programs" class="img-fluid rounded-4 shadow-lg" style="width: 100%; height: 450px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Overview -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Our Programs</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="program-card">
+            <img src="assets/pad.jpg" alt="Youth Empowerment">
+            <div class="program-card-body">
+              <h4 class="fw-bold lgta-green">Youth Empowerment</h4>
+              <p class="text-muted">Mindset transformation, purpose discovery, and leadership development for young Africans.</p>
+              <div class="mt-3">
+                <span class="badge bg-success">Open</span>
+                <span class="badge bg-warning text-dark ms-2">Monthly</span>
+              </div>
+              <a href="youth-empowerment.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="program-card">
+            <img src="assets/front.jpeg" alt="Environmental Projects">
+            <div class="program-card-body">
+              <h4 class="fw-bold lgta-green">Environmental Projects</h4>
+              <p class="text-muted">Afforestation, waste management, and green enterprise development.</p>
+              <div class="mt-3">
+                <span class="badge bg-success">Open</span>
+                <span class="badge bg-warning text-dark ms-2">Quarterly</span>
+              </div>
+              <a href="environmental-projects.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="program-card">
+            <img src="assets/poople.jpg" alt="Innovation Hub">
+            <div class="program-card-body">
+              <h4 class="fw-bold lgta-green">Innovation Hub</h4>
+              <p class="text-muted">Bootcamps, incubation, prototyping labs, and innovation challenges.</p>
+              <div class="mt-3">
+                <span class="badge bg-success">Open</span>
+                <span class="badge bg-warning text-dark ms-2">Monthly</span>
+              </div>
+              <a href="innovation-hub.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="program-card">
+            <img src="assets/serve.jpg" alt="Joint Investments">
+            <div class="program-card-body">
+              <h4 class="fw-bold lgta-green">Joint Investments</h4>
+              <p class="text-muted">Youth investment circles, collective funding, and venture incubation.</p>
+              <div class="mt-3">
+                <span class="badge bg-success">Open</span>
+                <span class="badge bg-warning text-dark ms-2">Monthly</span>
+              </div>
+              <a href="joint-investments.html" class="btn btn-outline-lgta btn-sm mt-3 w-100">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Can Join -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Who Can Join</h2>
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm text-center h-100">
+            <div class="display-3 lgta-gold mb-3">🎓</div>
+            <h5 class="fw-bold">Students & School Leavers</h5>
+            <p class="text-muted">High school, university students, and recent graduates</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm text-center h-100">
+            <div class="display-3 lgta-gold mb-3">💼</div>
+            <h5 class="fw-bold">Unemployed Youth</h5>
+            <p class="text-muted">Young people seeking skills, opportunities, and employment</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm text-center h-100">
+            <div class="display-3 lgta-gold mb-3">💡</div>
+            <h5 class="fw-bold">Innovators & Creatives</h5>
+            <p class="text-muted">Young entrepreneurs, artists, and problem-solvers</p>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm text-center h-100">
+            <div class="display-3 lgta-gold mb-3">🏆</div>
+            <h5 class="fw-bold">Athletes</h5>
+            <p class="text-muted">Young athletes and community group members</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Programs -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Upcoming Program Intakes</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="fw-bold lgta-green mb-0">Mindset & Purpose Workshop</h4>
+              <span class="badge bg-danger">Limited Seats</span>
+            </div>
+            <p><i class="bi bi-calendar lgta-gold me-2"></i> April 15-17, 2025</p>
+            <p><i class="bi bi-geo-alt lgta-gold me-2"></i> Kampala, Uganda & Online</p>
+            <p><i class="bi bi-people lgta-gold me-2"></i> 50 spots available</p>
+            <a href="#join-form" class="btn btn-lgta btn-sm">Apply Now</a>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="fw-bold lgta-green mb-0">Innovation Bootcamp</h4>
+              <span class="badge bg-success">Open</span>
+            </div>
+            <p><i class="bi bi-calendar lgta-gold me-2"></i> May 5-9, 2025</p>
+            <p><i class="bi bi-geo-alt lgta-gold me-2"></i> Nairobi, Kenya</p>
+            <p><i class="bi bi-people lgta-gold me-2"></i> 30 spots available</p>
+            <a href="#join-form" class="btn btn-lgta btn-sm">Apply Now</a>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="fw-bold lgta-green mb-0">Green Entrepreneurship</h4>
+              <span class="badge bg-success">Open</span>
+            </div>
+            <p><i class="bi bi-calendar lgta-gold me-2"></i> June 10-14, 2025</p>
+            <p><i class="bi bi-geo-alt lgta-gold me-2"></i> Kigali, Rwanda</p>
+            <p><i class="bi bi-people lgta-gold me-2"></i> 25 spots available</p>
+            <a href="#join-form" class="btn btn-lgta btn-sm">Apply Now</a>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="fw-bold lgta-green mb-0">Investment Circle Orientation</h4>
+              <span class="badge bg-warning text-dark">Monthly</span>
+            </div>
+            <p><i class="bi bi-calendar lgta-gold me-2"></i> Every 1st Saturday</p>
+            <p><i class="bi bi-geo-alt lgta-gold me-2"></i> Virtual (Zoom)</p>
+            <p><i class="bi bi-people lgta-gold me-2"></i> Unlimited</p>
+            <a href="#join-form" class="btn btn-lgta btn-sm">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Program Success Stories</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <img src="assets/joan.jpg" alt="Success Story" class="rounded-circle mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+            <h5 class="fw-bold">Grace Akello</h5>
+            <p class="text-muted small">Innovation Hub Graduate</p>
+            <p class="fst-italic">"After the innovation bootcamp, I co-founded a waste recycling social enterprise. We've created 15 jobs and recycled 20 tons of plastic. LEGTA gave me the skills and confidence to start."</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <img src="assets/hhh.jpeg" alt="Success Story" class="rounded-circle mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+            <h5 class="fw-bold">MUTALINDWA BLAIR BRUNO</h5>
+            <p class="text-muted small">Youth Empowerment Program</p>
+            <p class="fst-italic">"The mindset workshop helped me discover my purpose. I now mentor other youth and lead our community's environmental campaign. We've planted 5,000 trees in two years."</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+            <img src="assets/patu.jpg" alt="Success Story" class="rounded-circle mb-3" style="width: 80px; height: 80px; object-fit: cover;">
+            <h5 class="fw-bold">Aisha Nabatanzi</h5>
+            <p class="text-muted small">Joint Investment Circle</p>
+            <p class="fst-italic">"Our investment circle of 20 youth pooled $5,000 and funded three startups. My agri-tech business received funding and mentorship. Today, I employ 10 youth and supply to 50 farmers."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section id="join-form" class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="join-form">
+            <h3 class="fw-bold lgta-green text-center mb-4">Apply to Join LEGTA Programs</h3>
+            <p class="text-center mb-4">Ready to transform your life and community? Complete the form below to get started.</p>
+            
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="email" class="form-control" placeholder="Email Address" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="tel" class="form-control" placeholder="Phone Number">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="number" class="form-control" placeholder="Age">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="Country">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" placeholder="City">
+                </div>
+              </div>
+              <div class="mb-3">
+                <select class="form-select" required>
+                  <option selected disabled>Select Program of Interest</option>
+                  <option>Youth Empowerment - Mindset Workshop</option>
+                  <option>Youth Empowerment - Mentorship Program</option>
+                  <option>Environmental Projects - Green Campaign</option>
+                  <option>Innovation Hub - Bootcamp</option>
+                  <option>Innovation Hub - Incubation</option>
+                  <option>Joint Investments - Investment Circle</option>
+                  <option>Not Sure - Help Me Choose</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <select class="form-select">
+                  <option selected disabled>How did you hear about us?</option>
+                  <option>Social Media</option>
+                  <option>Friend/Family</option>
+                  <option>School/University</option>
+                  <option>Community Group</option>
+                  <option>Online Search</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="4" placeholder="Tell us about yourself, your goals, and why you want to join LEGTA programs..."></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-lgta btn-lg px-5">Submit Application</button>
+              </div>
+            </form>
+            
+            <p class="text-center text-muted small mt-4">
+              <i class="bi bi-info-circle me-2"></i>
+              Our team will review your application and contact you within 5 business days.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Do I need to pay to join LEGTA programs?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Most LEGTA programs are completely free for participants. Some advanced programs may require a small contribution, but scholarships are available for those in need. We believe in removing barriers to youth empowerment.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  What is the time commitment?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Programs range from 2-day workshops to 6-month incubations. Most require 4-8 hours per week. You can choose programs that fit your schedule.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Can I join multiple programs?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes! Many participants start with Youth Empowerment, then progress to Innovation Hub and Joint Investments. We encourage continuous learning and growth.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Are programs available in my country?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  We currently operate in 15 African countries and offer virtual programs open to youth across the continent. Check our upcoming events or contact us for availability in your region.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="p-5 rounded-5 text-white text-center" style="background: linear-gradient(145deg, #144704, #1a5a06);">
+            <h3 class="fw-bold mb-3 fs-2">Your Journey Starts Here</h3>
+            <p class="mb-4 fs-5">Join thousands of young Africans transforming their lives and communities.</p>
+            <a href="#join-form" class="btn btn-light btn-lg px-5 py-3 fw-bold me-3" style="color: #144704;">Apply Now</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 d-flex align-items-center">
+          <img src="assets/logo 2.JPG" alt="LEGTA Logo" class="footer-logo me-3">
+          <h4 class="fs-4 fw-bold">Let's Grow Together Africa</h4>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold lgta-gold">Quick Links</h5>
+          <div class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="vision.html">Our Vision</a>
+            <a href="teams.html">Our Team</a>
+            <a href="youth-empowerment.html">Youth Empowerment</a>
+            <a href="environmental-projects.html">Environmental Projects</a>
+            <a href="innovation-hub.html">Innovation Hub</a>
+            <a href="joint-investments.html">Joint Investments</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold lgta-gold">Connect With Us</h5>
+          <div class="d-flex fs-3 mb-3">
+            <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <p><i class="bi bi-envelope me-2"></i> programs@letsgrowtogetherafrica.org</p>
+          <p><i class="bi bi-telephone me-2"></i> +256 758 943259</p>
+        </div>
+      </div>
+      <hr style="background: #ce7815;">
+      <p class="text-center mb-0">&copy; 2026 Let's Grow Together Africa. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/256758943259" class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Chatbot -->
+  <div id="chatbot-container">
+    <div id="chatbot-window">
+      <div style="background: #144704; color: white; padding: 15px; border-radius: 10px 10px 0 0;">
+        <h6 style="margin: 0; font-weight: 600;"><i class="bi bi-robot me-2"></i>LEGTA Assistant</h6>
+        <button id="close-chat" style="background: none; border: none; color: white; float: right; cursor: pointer;">×</button>
+      </div>
+      <div id="chat-messages">
+        <div style="background: #f0f0f0; padding: 10px; border-radius: 10px; margin-bottom: 10px;">
+          <strong>LEGTA Assistant:</strong> Hello! Ready to join LEGTA programs? I can help you choose the right program, explain requirements, and guide you through the application process. How can I help?
+        </div>
+      </div>
+      <div style="padding: 15px; border-top: 1px solid #ddd; background: white;">
+        <div class="input-group">
+          <input type="text" id="chat-input" placeholder="Type your question..." class="form-control" style="border-radius: 30px 0 0 30px;">
+          <button id="send-chat" style="background: #144704; color: white; border: none; padding: 8px 20px; border-radius: 0 30px 30px 0; cursor: pointer;">
+            <i class="bi bi-send"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button id="chatbot-toggle">
+      <i class="bi bi-chat-dots"></i>
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatbotToggle = document.getElementById('chatbot-toggle');
+      const chatbotWindow = document.getElementById('chatbot-window');
+      const closeChat = document.getElementById('close-chat');
+      const sendButton = document.getElementById('send-chat');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+      
+      chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.style.display = chatbotWindow.style.display === 'none' ? 'block' : 'none';
+      });
+      
+      closeChat.addEventListener('click', () => {
+        chatbotWindow.style.display = 'none';
+      });
+      
+      function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.style.background = isUser ? '#e3f2fd' : '#f0f0f0';
+        messageDiv.style.padding = '10px';
+        messageDiv.style.borderRadius = '10px';
+        messageDiv.style.marginBottom = '10px';
+        messageDiv.innerHTML = `<strong>${isUser ? 'You' : 'LEGTA Assistant'}:</strong> ${message}`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+      
+      sendButton.addEventListener('click', () => {
+        const question = chatInput.value.trim();
+        if (question) {
+          addMessage(question, true);
+          chatInput.value = '';
+          
+          setTimeout(() => {
+            if (question.toLowerCase().includes('program') || question.toLowerCase().includes('which')) {
+              addMessage("We have 4 main programs: Youth Empowerment (mindset/purpose), Environmental Projects (green initiatives), Innovation Hub (bootcamps/incubation), and Joint Investments (investment circles). Which area interests you most?");
+            } else if (question.toLowerCase().includes('cost') || question.toLowerCase().includes('free')) {
+              addMessage("Most LEGTA programs are completely free! Some advanced programs may have a small fee, but scholarships are available for everyone. We believe in removing barriers to youth empowerment.");
+            } else if (question.toLowerCase().includes('apply') || question.toLowerCase().includes('application')) {
+              addMessage("Complete the application form on this page. Our team will review your application and contact you within 5 business days. The process takes about 10 minutes.");
+            } else if (question.toLowerCase().includes('eligible') || question.toLowerCase().includes('qualify')) {
+              addMessage("Our programs are open to all African youth: students, school leavers, unemployed youth, innovators, creatives, athletes, and community group members. Age range: 15-35 years.");
+            } else {
+              addMessage("Welcome to LEGTA! Our programs help young Africans discover purpose, build skills, access funding, and join a continental movement. What specific information do you need?");
+            }
+          }, 500);
+        }
+      });
+      
+      chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          sendButton.click();
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
